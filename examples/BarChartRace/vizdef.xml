@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<visualizationDefinition version="3.1" xmlns="http://www.ibm.com/xmlns/prod/ba/vipr/vizBundle/vizdef.3">
+    <slots>
+        <!-- Slot order == data.cols[] index. Mirrored as TIME/NAME/CATEGORY/VALUE in Main.ts. -->
+        <slot name="time"     caption="Time"     type="cat"  optional="false" />
+        <slot name="name"     caption="Name"     type="cat"  optional="false" />
+        <slot name="category" caption="Category" type="cat"  optional="true"  channel="color" />
+        <slot name="value"    caption="Value"    type="cont" optional="false" />
+    </slots>
+
+    <dataSets>
+        <dataSet name="data">
+            <ref slot="time" />
+            <ref slot="name" />
+            <ref slot="category" />
+            <ref slot="value" />
+        </dataSet>
+    </dataSets>
+
+    <properties>
+        <group name="general" caption="General">
+            <palette name="colors"       caption="Colors"            slot="category" type="cat" />
+            <number  name="topN"         caption="Top N"             defaultValue="12"  minValue="1" />
+            <number  name="framesPerStep" caption="Frames per step"  defaultValue="10"  minValue="1" />
+            <number  name="stepDuration" caption="Step duration (ms)" defaultValue="250" minValue="1" />
+            <boolean name="loop"         caption="Loop"              defaultValue="false" />
+            <boolean name="labels"       caption="Value labels"      defaultValue="true" />
+        </group>
+    </properties>
+
+    <!-- Tooltips are provided by the host via hitTest; no decorations needed.
+         The source chart has no selection/highlight, so we omit <capabilities>. -->
+</visualizationDefinition>

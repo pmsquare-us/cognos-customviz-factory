@@ -1,0 +1,22 @@
+# Build / dependency artifacts produced by customvis (keep source only)
+node_modules/
+build/
+*.packed.zip
+package-lock.json
+rollup.config.js
+
+# IBM SDK library (Licensed Materials - Property of IBM) - do NOT redistribute.
+# Restored per-project by `customvis upgrade` / `customvis create`. See README.
+customvis-lib.tgz
+
+# Scratch area — viz are scaffolded & built here, then harvested into examples/
+workbench/
+
+# Local environment / inputs (not project deliverables), anchored to repo root.
+# (.gitignore has no inline comments — keep each note on its own line.)
+# Accidental artifact from global `npm install -g customvis.tgz`:
+/package.json
+# customvis CLI installer (customvis.tgz) — download per the dev guide:
+/resources/
+# Third-party D3 source inputs fed to the generator (e.g. bar-chart-race.tgz):
+/d3/

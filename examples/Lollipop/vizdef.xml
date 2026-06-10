@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<visualizationDefinition version="3.1" xmlns="http://www.ibm.com/xmlns/prod/ba/vipr/vizBundle/vizdef.3">
+    <slots>
+        <slot name="categories" caption="Categories" type="cat"  optional="false" channel="color" />
+        <slot name="values"     caption="Values"     type="cont" optional="false" />
+    </slots>
+
+    <dataSets>
+        <dataSet name="data">
+            <ref slot="categories" />
+            <ref slot="values" />
+        </dataSet>
+    </dataSets>
+
+    <properties>
+        <group name="general" caption="General">
+            <palette name="colors" caption="Colors" slot="categories" type="cat" />
+            <length  name="dotSize" caption="Dot Size" defaultValue="8px" />
+            <boolean name="labels"  caption="Value Labels" defaultValue="true" />
+        </group>
+    </properties>
+
+    <capabilities>
+        <decorations>
+            <decoration name="selected"     type="boolean" target="datapoint" />
+            <decoration name="hasSelection" type="boolean" target="dataset" />
+            <decoration name="highlighted"  type="boolean" target="datapoint" />
+        </decorations>
+    </capabilities>
+</visualizationDefinition>
