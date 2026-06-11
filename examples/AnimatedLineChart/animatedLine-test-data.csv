@@ -1,0 +1,193 @@
+Year,Series,Value
+1960,Inflation,1.46
+1961,Inflation,1.07
+1962,Inflation,1.20
+1963,Inflation,1.24
+1964,Inflation,1.28
+1965,Inflation,1.59
+1966,Inflation,3.02
+1967,Inflation,2.77
+1968,Inflation,4.27
+1969,Inflation,5.46
+1970,Inflation,5.84
+1971,Inflation,4.29
+1972,Inflation,3.27
+1973,Inflation,6.18
+1974,Inflation,11.05
+1975,Inflation,9.14
+1976,Inflation,5.74
+1977,Inflation,6.50
+1978,Inflation,7.63
+1979,Inflation,11.25
+1980,Inflation,13.55
+1981,Inflation,10.33
+1982,Inflation,6.13
+1983,Inflation,3.21
+1984,Inflation,4.30
+1985,Inflation,3.55
+1986,Inflation,1.90
+1987,Inflation,3.66
+1988,Inflation,4.08
+1989,Inflation,4.83
+1990,Inflation,5.40
+1991,Inflation,4.23
+1992,Inflation,3.03
+1993,Inflation,2.95
+1994,Inflation,2.61
+1995,Inflation,2.81
+1996,Inflation,2.93
+1997,Inflation,2.34
+1998,Inflation,1.55
+1999,Inflation,2.19
+2000,Inflation,3.38
+2001,Inflation,2.83
+2002,Inflation,1.59
+2003,Inflation,2.27
+2004,Inflation,2.68
+2005,Inflation,3.39
+2006,Inflation,3.23
+2007,Inflation,2.85
+2008,Inflation,3.84
+2009,Inflation,-0.36
+2010,Inflation,1.64
+2011,Inflation,3.16
+2012,Inflation,2.07
+2013,Inflation,1.46
+2014,Inflation,1.62
+2015,Inflation,0.12
+2016,Inflation,1.26
+2017,Inflation,2.13
+2018,Inflation,2.44
+2019,Inflation,1.81
+2020,Inflation,1.23
+2021,Inflation,4.70
+2022,Inflation,8.00
+2023,Inflation,4.12
+1960,Fed Funds Rate,3.22
+1961,Fed Funds Rate,1.96
+1962,Fed Funds Rate,2.68
+1963,Fed Funds Rate,3.18
+1964,Fed Funds Rate,3.50
+1965,Fed Funds Rate,4.07
+1966,Fed Funds Rate,5.11
+1967,Fed Funds Rate,4.22
+1968,Fed Funds Rate,5.66
+1969,Fed Funds Rate,8.21
+1970,Fed Funds Rate,7.17
+1971,Fed Funds Rate,4.67
+1972,Fed Funds Rate,4.44
+1973,Fed Funds Rate,8.74
+1974,Fed Funds Rate,10.51
+1975,Fed Funds Rate,5.82
+1976,Fed Funds Rate,5.05
+1977,Fed Funds Rate,5.54
+1978,Fed Funds Rate,7.94
+1979,Fed Funds Rate,11.20
+1980,Fed Funds Rate,13.35
+1981,Fed Funds Rate,16.38
+1982,Fed Funds Rate,12.24
+1983,Fed Funds Rate,9.09
+1984,Fed Funds Rate,10.23
+1985,Fed Funds Rate,8.10
+1986,Fed Funds Rate,6.81
+1987,Fed Funds Rate,6.66
+1988,Fed Funds Rate,7.57
+1989,Fed Funds Rate,9.21
+1990,Fed Funds Rate,8.10
+1991,Fed Funds Rate,5.69
+1992,Fed Funds Rate,3.52
+1993,Fed Funds Rate,3.02
+1994,Fed Funds Rate,4.21
+1995,Fed Funds Rate,5.84
+1996,Fed Funds Rate,5.30
+1997,Fed Funds Rate,5.46
+1998,Fed Funds Rate,5.35
+1999,Fed Funds Rate,4.97
+2000,Fed Funds Rate,6.24
+2001,Fed Funds Rate,3.88
+2002,Fed Funds Rate,1.67
+2003,Fed Funds Rate,1.13
+2004,Fed Funds Rate,1.35
+2005,Fed Funds Rate,3.22
+2006,Fed Funds Rate,4.97
+2007,Fed Funds Rate,5.02
+2008,Fed Funds Rate,1.92
+2009,Fed Funds Rate,0.24
+2010,Fed Funds Rate,0.18
+2011,Fed Funds Rate,0.10
+2012,Fed Funds Rate,0.14
+2013,Fed Funds Rate,0.11
+2014,Fed Funds Rate,0.09
+2015,Fed Funds Rate,0.13
+2016,Fed Funds Rate,0.40
+2017,Fed Funds Rate,1.00
+2018,Fed Funds Rate,1.83
+2019,Fed Funds Rate,2.16
+2020,Fed Funds Rate,0.36
+2021,Fed Funds Rate,0.08
+2022,Fed Funds Rate,1.68
+2023,Fed Funds Rate,5.02
+1960,Unemployment,5.54
+1961,Unemployment,6.70
+1962,Unemployment,5.57
+1963,Unemployment,5.64
+1964,Unemployment,5.16
+1965,Unemployment,4.51
+1966,Unemployment,3.79
+1967,Unemployment,3.84
+1968,Unemployment,3.56
+1969,Unemployment,3.49
+1970,Unemployment,4.99
+1971,Unemployment,5.95
+1972,Unemployment,5.60
+1973,Unemployment,4.86
+1974,Unemployment,5.64
+1975,Unemployment,8.48
+1976,Unemployment,7.71
+1977,Unemployment,7.05
+1978,Unemployment,6.07
+1979,Unemployment,5.85
+1980,Unemployment,7.18
+1981,Unemployment,7.62
+1982,Unemployment,9.71
+1983,Unemployment,9.60
+1984,Unemployment,7.51
+1985,Unemployment,7.19
+1986,Unemployment,7.00
+1987,Unemployment,6.18
+1988,Unemployment,5.49
+1989,Unemployment,5.26
+1990,Unemployment,5.62
+1991,Unemployment,6.85
+1992,Unemployment,7.49
+1993,Unemployment,6.91
+1994,Unemployment,6.10
+1995,Unemployment,5.59
+1996,Unemployment,5.41
+1997,Unemployment,4.94
+1998,Unemployment,4.50
+1999,Unemployment,4.22
+2000,Unemployment,3.97
+2001,Unemployment,4.74
+2002,Unemployment,5.78
+2003,Unemployment,5.99
+2004,Unemployment,5.54
+2005,Unemployment,5.08
+2006,Unemployment,4.62
+2007,Unemployment,4.62
+2008,Unemployment,5.80
+2009,Unemployment,9.28
+2010,Unemployment,9.63
+2011,Unemployment,8.95
+2012,Unemployment,8.08
+2013,Unemployment,7.37
+2014,Unemployment,6.17
+2015,Unemployment,5.28
+2016,Unemployment,4.87
+2017,Unemployment,4.36
+2018,Unemployment,3.90
+2019,Unemployment,3.67
+2020,Unemployment,8.05
+2021,Unemployment,5.35
+2022,Unemployment,3.61
+2023,Unemployment,3.55

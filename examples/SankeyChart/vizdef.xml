@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<visualizationDefinition version="3.1" xmlns="http://www.ibm.com/xmlns/prod/ba/vipr/vizBundle/vizdef.3">
+    <slots>
+        <slot name="source" caption="Source Node"  type="cat"  optional="false" />
+        <slot name="target" caption="Target Node"  type="cat"  optional="false" />
+        <slot name="value"  caption="Flow Value"   type="cont" optional="false" />
+    </slots>
+
+    <dataSets>
+        <dataSet name="data" sortsByDatapoint="false">
+            <ref slot="source" />
+            <ref slot="target" />
+            <ref slot="value" />
+        </dataSet>
+    </dataSets>
+
+    <properties>
+        <group name="general" caption="General">
+            <palette name="colors" caption="Colors" slot="source" type="cat" />
+            <boolean name="darkMode"      caption="Dark Background"   defaultValue="false" />
+            <boolean name="showName"      caption="Show Node Name"    defaultValue="true" />
+            <boolean name="showValue"     caption="Show Value"        defaultValue="true" />
+            <boolean name="showPercent"   caption="Show Percent"      defaultValue="false" />
+            <number  name="nodeWidth"     caption="Node Width (px)"   defaultValue="20" minValue="8"  maxValue="60" />
+            <number  name="nodePadding"   caption="Node Padding (px)" defaultValue="12" minValue="4"  maxValue="60" />
+            <number  name="flowOpacity"   caption="Flow Opacity"      defaultValue="40" minValue="10" maxValue="90" />
+        </group>
+    </properties>
+
+    <capabilities>
+        <decorations>
+            <decoration name="selected"     type="boolean" target="datapoint" />
+            <decoration name="hasSelection" type="boolean" target="dataset" />
+            <decoration name="highlighted"  type="boolean" target="datapoint" />
+        </decorations>
+    </capabilities>
+</visualizationDefinition>

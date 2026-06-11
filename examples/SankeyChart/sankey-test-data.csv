@@ -1,0 +1,13 @@
+Source,Target,Value
+Software,Revenue,25000
+Consulting,Revenue,19100
+Infrastructure,Revenue,15300
+Financing,Revenue,645
+Other,Revenue,455
+Revenue,Gross Profit,32700
+Revenue,Cost of Goods Sold,27800
+Gross Profit,Operating Income,14200
+Gross Profit,Total Operating Expense,18500
+Operating Income,Pretax Income,12100
+Pretax Income,Net Income,8500
+Pretax Income,Income Tax,3600

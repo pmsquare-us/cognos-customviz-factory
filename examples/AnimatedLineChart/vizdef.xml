@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<visualizationDefinition version="3.1" xmlns="http://www.ibm.com/xmlns/prod/ba/vipr/vizBundle/vizdef.3">
+    <slots>
+        <slot name="categories" caption="X Axis (Time / Category)" type="cat"  optional="false" />
+        <slot name="values"     caption="Values"                   type="cont" optional="false" />
+        <slot name="series"     caption="Series (Color)"           type="cat"  optional="true" channel="color" />
+    </slots>
+
+    <dataSets>
+        <dataSet name="data" sortsByDatapoint="false">
+            <ref slot="categories" />
+            <ref slot="values" />
+            <ref slot="series" />
+        </dataSet>
+    </dataSets>
+
+    <properties>
+        <group name="general">
+            <palette name="colors" caption="Colors" slot="series" type="cat" />
+            <boolean name="smooth"       caption="Smooth Lines"    defaultValue="true" />
+            <boolean name="showMarkers"  caption="Show Markers"    defaultValue="false" />
+            <boolean name="showArea"     caption="Fill Under Line" defaultValue="false" />
+            <number  name="lineWidth"    caption="Line Width (px)" defaultValue="2" minValue="1" maxValue="8" />
+            <number  name="animDuration" caption="Draw Duration (ms)"  defaultValue="1000" minValue="200" maxValue="4000" />
+            <number  name="animStagger"  caption="Series Stagger (ms)" defaultValue="800"  minValue="0"   maxValue="3000" />
+        </group>
+    </properties>
+
+    <capabilities>
+        <decorations>
+            <decoration name="selected"     type="boolean" target="datapoint" />
+            <decoration name="hasSelection" type="boolean" target="dataset" />
+            <decoration name="highlighted"  type="boolean" target="datapoint" />
+        </decorations>
+    </capabilities>
+</visualizationDefinition>
