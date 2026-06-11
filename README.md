@@ -4,22 +4,30 @@ A **factory for building IBM Cognos Analytics Custom Visualizations** — fast a
 from a narrative description, a visual example, or an existing D3 (or other-format) chart.
 
 This is **not** a single visualization. It's the toolchain, reference material, known-good
-templates, a worked-example library, and a Claude Code skill that ties them together so you
+templates, a worked-example library, and Claude Code skills that tie them together so you
 don't re-derive the data contract and rendering plumbing every time.
 
-> **Built to be driven from [Claude Code](https://claude.com/claude-code).** The repo ships a
-> `/generate-cognos-viz` skill (in `.claude/skills/`) that orchestrates the whole build. Clone
-> the repo, open it in Claude Code, and the skill is already there — no extra setup.
+It covers **two tracks**:
+
+- **Code visualizations** — `customvis` CLI + `RenderBase` + `vizdef.xml`. Skill: `/generate-cognos-viz`.
+- **Schematics** — data mapped onto an annotated **SVG** (floor plan, seating chart, mechanical
+  drawing, schematic map). No CLI/RenderBase — just an annotated SVG packaged into a `.zip`.
+  Skill: `/generate-cognos-schematic`.
+
+> **Built to be driven from [Claude Code](https://claude.com/claude-code).** The repo ships both
+> skills (in `.claude/skills/`) that orchestrate the whole build. Clone the repo, open it in
+> Claude Code, and they're already there — no extra setup.
 
 ## What you get
 
 | Folder | What's in it |
 |---|---|
-| `docs/` | Reference. `Cognos_CustomViz_Developer_Guide.md` is the source of truth; the other `*.md` files are condensed, generation-oriented cheatsheets (API, vizdef, patterns, D3 porting, gotchas). |
-| `templates/` | Known-good `customvis create` baselines (BarChart / Basic / BasicJS). Start new viz from here. |
-| `examples/` | Finished, validated viz used as few-shot references (Lollipop, BarChartRace). |
-| `workbench/` | Disposable scratch area where new viz are scaffolded and built. |
-| `.claude/skills/generate-cognos-viz/` | The `/generate-cognos-viz` orchestrator skill. |
+| `docs/` | Reference. `Cognos_CustomViz_Developer_Guide.md` is the source of truth; the other `*.md` files are condensed cheatsheets (API, vizdef, patterns, D3 porting, gotchas, schematics). |
+| `templates/` | Known-good baselines — `customvis create` ones (BarChart / Basic / BasicJS) and a `Schematic/` reference SVG. |
+| `examples/` | Finished, validated viz & schematics used as few-shot references (Lollipop, BarChartRace, OfficeFloorPlan). |
+| `tools/` | Schematic helpers: `validate-schematic-svg.mjs` (lint) and `pack-schematic.mjs` (build the upload `.zip`). |
+| `workbench/` | Disposable scratch area where new work is scaffolded and built. |
+| `.claude/skills/` | The `/generate-cognos-viz` and `/generate-cognos-schematic` orchestrator skills. |
 | `CLAUDE.md` | Instructions Claude reads automatically when working in this repo. |
 
 ## Prerequisites
@@ -61,6 +69,26 @@ walks the staged playbook for you: spec → `vizdef.xml` data contract → scaff
 4. **Build & preview** — `customvis build` / `customvis start`, validate in Cognos, iterate with **Refresh**.
 5. **Polish** — properties, legend, `nls/` localization, responsiveness, perf via `_info.reason`.
 6. **Pack/Deploy & harvest** — `customvis pack` → upload via *Manage → Customization → Custom visuals*; copy the finished viz into `examples/`.
+
+## Schematics
+
+To map data onto a graphic instead of a chart, ask:
+
+```
+/generate-cognos-schematic
+```
+
+…and describe the graphic (or share an example image / existing SVG) plus the region keys. The
+skill generates a clean annotated SVG (`data-cv-key` per region, optional `data-cv-view` groups),
+validates it, and packages a ready-to-upload `.zip`. Schematics use **no `customvis`/RenderBase** —
+they're annotated SVGs. The two helper scripts work standalone too:
+
+```
+node tools/validate-schematic-svg.mjs <file.svg>          # lint against the data-binding contract
+node tools/pack-schematic.mjs --name "<Name>" <file.svg>  # build <slug>.schematic.zip to upload
+```
+
+See `docs/schematics-guide.md` for the full contract, and `examples/OfficeFloorPlan/` for a worked example.
 
 ## Building manually (without the skill)
 

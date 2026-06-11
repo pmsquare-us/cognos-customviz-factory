@@ -56,6 +56,8 @@
 
 ## Schematics (SVG-data-binding viz)
 
+Quick rules below; full workflow + packaging in `docs/schematics-guide.md` (skill: `/generate-cognos-schematic`).
+
 - Map with `data-cv-key`; group with `data-cv-view` (one view per element, no nesting).
 - Supported elements: `circle, ellipse, line, path, polygon, polyline, rect, text, svg, g`.
 - Paths must be **closed** (`z`/`Z`). Keys can't be hierarchical/multi-part.

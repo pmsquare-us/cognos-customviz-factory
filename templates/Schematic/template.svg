@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reference schematic. Copy this, reshape the geometry, and rename the keys.
+     Contract:
+       - data-cv-key on a region == a category value in your Cognos dataset (string match).
+       - data-cv-view groups regions into a toggleable "view"; title is the label users see.
+       - Use presentation attributes (fill/stroke/...), NOT classes or <style>. Close every <path> (z).
+       - Mappable elements: circle, ellipse, line, path, polygon, polyline, rect, text, svg, g.
+     Validate with:  node tools/validate-schematic-svg.mjs templates/Schematic/template.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+  <g data-cv-view="wing_a" title="Wing A">
+    <rect data-cv-key="A1" x="10" y="10" width="80" height="40" fill="#dfe7f5" stroke="#33475b" stroke-width="1"/>
+    <text x="50" y="34" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#33475b">A1</text>
+    <rect data-cv-key="A2" x="10" y="60" width="80" height="40" fill="#dfe7f5" stroke="#33475b" stroke-width="1"/>
+    <text x="50" y="84" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#33475b">A2</text>
+  </g>
+  <g data-cv-view="wing_b" title="Wing B">
+    <rect data-cv-key="B1" x="110" y="10" width="80" height="40" fill="#e7f5df" stroke="#33475b" stroke-width="1"/>
+    <text x="150" y="34" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#33475b">B1</text>
+    <rect data-cv-key="B2" x="110" y="60" width="80" height="40" fill="#e7f5df" stroke="#33475b" stroke-width="1"/>
+    <text x="150" y="84" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#33475b">B2</text>
+  </g>
+</svg>
