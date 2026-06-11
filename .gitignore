@@ -20,3 +20,7 @@ workbench/
 /resources/
 # Third-party D3 source inputs fed to the generator (e.g. bar-chart-race.tgz):
 /d3/
+# IBM-authored sample schematic package — reference only, not ours to redistribute.
+/docs/CognosSchematicExample.zip
+# Generated schematic upload packages (built by tools/pack-schematic.mjs):
+*.schematic.zip

@@ -8,18 +8,27 @@ visualization into a working, deployable Cognos custom viz *quickly and repeatab
 without re-deriving the toolchain, data contract, and rendering plumbing every time.
 
 This is infrastructure, not a single viz: reference material + known-good templates + a
-worked-example library + a Claude Code skill that orchestrates the whole flow.
+worked-example library + Claude Code skills that orchestrate the whole flow.
+
+**Two tracks** (pick by output type):
+- **Code visualizations** — `customvis` CLI + `RenderBase` + `vizdef.xml`. Skill: `/generate-cognos-viz`.
+- **Schematics** — data mapped onto an annotated **SVG** (floor plan, seating chart, mechanical
+  drawing, schematic map). **No CLI / RenderBase / vizdef** — just an annotated SVG packaged into a
+  `.zip`. Skill: `/generate-cognos-schematic`. See `docs/schematics-guide.md`.
 
 ## How it's organized
 
 ```
 docs/        Reference. Cognos_CustomViz_Developer_Guide.md is the source of truth.
-             The other *.md files are condensed, generation-oriented cheatsheets.
-templates/   Known-good `customvis create` baselines (BarChart / Basic / BasicJS).
-             Start new viz by copying/scaffolding from here, not from scratch.
-examples/    Finished viz, harvested after each build. Used as few-shot references.
+             The other *.md files are condensed, generation-oriented cheatsheets
+             (incl. schematics-guide.md for the schematic track).
+templates/   Known-good baselines. customvis: BarChart / Basic / BasicJS. Schematic/: a
+             reference annotated SVG. Start new work by copying from here, not from scratch.
+examples/    Finished viz & schematics, harvested after each build. Few-shot references.
 workbench/   Scratch area where new viz are scaffolded and built. Disposable.
-.claude/skills/generate-cognos-viz/   The /generate-cognos-viz orchestrator skill.
+tools/       Schematic helpers: validate-schematic-svg.mjs (lint), pack-schematic.mjs (build .zip).
+.claude/skills/generate-cognos-viz/        /generate-cognos-viz orchestrator (code viz).
+.claude/skills/generate-cognos-schematic/  /generate-cognos-schematic orchestrator (schematics).
 ```
 
 ## The generation playbook (follow these stages for every new viz)
@@ -36,6 +45,19 @@ workbench/   Scratch area where new viz are scaffolded and built. Disposable.
 5. **Polish** — properties, legend, `nls/`, responsiveness, perf via `_info.reason`.
 6. **Pack/Deploy & harvest** — `customvis pack` → upload via *Manage → Customization →
    Custom visuals*; copy the finished viz into `examples/`.
+
+## The schematic playbook (annotated-SVG track — `/generate-cognos-schematic`)
+
+No CLI/RenderBase/vizdef. Full detail in `docs/schematics-guide.md`; stages:
+0. **Spec** — input type (description / example image / existing SVG); the **region key list**
+   (`data-cv-key` values double as the dataset category values); views; package name/icon.
+1. **Produce the SVG** — author from a description, reproduce from an image, or clean an existing SVG.
+2. **Annotate** — `data-cv-key` per region; group into `data-cv-view` (+ `title`); presentation attrs; closed paths.
+3. **Validate** — `node tools/validate-schematic-svg.mjs <svg>` (gate; exit 1 on errors).
+4. **Package** — `node tools/pack-schematic.mjs --name "<Name>" <svg>` → `<slug>.schematic.zip`.
+5. **Deploy & preview** — upload via *Manage → Custom visuals*; drag **Schematic preview**, bind
+   data (category values must match keys), check **Highlight regions** / views / pan-zoom / selection.
+6. **Harvest** — copy SVG + `spec.md` into `examples/`; add a row to `examples/README.md`.
 
 ## Toolchain (verified in this environment)
 

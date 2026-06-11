@@ -1,9 +1,12 @@
 # Onboarding: Cognos CustomViz Factory
 
 Welcome! This repo lets you build **IBM Cognos Analytics Custom Visualizations** with Claude Code
-doing the heavy lifting. You describe a chart (or paste D3 source to port) and the
-`/generate-cognos-viz` skill drives the whole build — data contract, renderer, build, preview,
-and packaging.
+doing the heavy lifting. There are two tracks:
+
+- **Code visualizations** — describe a chart (or paste D3 source to port) and `/generate-cognos-viz`
+  drives the whole build: data contract, renderer, build, preview, packaging.
+- **Schematics** — map data onto a graphic (floor plan, seating chart, …). `/generate-cognos-schematic`
+  generates an annotated SVG and a ready-to-upload package. No SDK/CLI involved.
 
 You don't need to learn the Cognos SDK internals to get started. You do need the tooling below.
 
@@ -52,6 +55,23 @@ The skill asks only what it can't infer, then walks these stages so you don't ha
 | 5. Polish | Properties, legend, `nls/` localization, responsiveness, performance gates. |
 | 6. Pack & harvest | `customvis pack` → upload in Cognos; finished viz is copied into `examples/`. |
 
+## 2b. Or build a schematic
+
+To map data onto a graphic instead of a chart, run `/generate-cognos-schematic`. Describe the
+graphic (or share an example image / existing SVG) and the **region keys** — the labels that will
+match your dataset's category values. The skill generates a clean annotated SVG (`data-cv-key` per
+region, optional toggleable `data-cv-view` groups), validates it, and packages a `.zip` you upload
+via *Manage → Customization → Custom visuals*. No `customvis`/RenderBase — it's an annotated SVG.
+
+The two helper scripts also work on their own:
+
+```
+node tools/validate-schematic-svg.mjs <file.svg>          # lint against the contract
+node tools/pack-schematic.mjs --name "<Name>" <file.svg>  # build <slug>.schematic.zip
+```
+
+See `docs/schematics-guide.md` and `examples/OfficeFloorPlan/`.
+
 ## 3. Preview in Cognos
 
 With `customvis start` running locally:
@@ -63,8 +83,9 @@ Then **Refresh visualization** after each rebuild.
 ## 4. Where things live
 
 - `docs/` — reference; `Cognos_CustomViz_Developer_Guide.md` is the source of truth, the rest are cheatsheets.
-- `templates/` — known-good scaffolding baselines.
-- `examples/` — finished viz used as references (start from the closest one).
+- `templates/` — known-good baselines (customvis scaffolds + a `Schematic/` reference SVG).
+- `examples/` — finished viz & schematics used as references (start from the closest one).
+- `tools/` — schematic helpers (`validate-schematic-svg.mjs`, `pack-schematic.mjs`).
 - `workbench/` — disposable build area.
 - `CLAUDE.md` — Claude reads this automatically; it encodes the playbook and conventions.
 
