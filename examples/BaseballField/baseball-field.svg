@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Baseball field spray-chart schematic.
+     Regions (data-cv-key): P C 1B 2B 3B SS LF CF RF  (standard position abbreviations).
+     Views: infield (P,C,1B,2B,3B,SS), outfield (LF,CF,RF).
+     Fair territory radiates from home plate (300,470): outfield arc split into thirds,
+     infield into 4 wedges, catcher at home, pitcher at the mound.
+     Base fills are field-appropriate defaults; Cognos overrides them with the bound-measure gradient. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 600 450" width="600" height="450">
+
+  <!-- ===== Outfield view (LF / CF / RF) ===== -->
+  <g data-cv-view="outfield" title="Outfield">
+    <path data-cv-key="LF" fill="#4f9b50" stroke="#ffffff" stroke-width="1"
+          d="M155.04,325.04 L10.1,180.1 A410,410 0 0 1 193.9,74.0 L246.95,271.99 A205,205 0 0 0 155.04,325.04 Z"/>
+    <path data-cv-key="CF" fill="#56a557" stroke="#ffffff" stroke-width="1"
+          d="M246.95,271.99 L193.9,74.0 A410,410 0 0 1 406.1,74.0 L353.05,271.99 A205,205 0 0 0 246.95,271.99 Z"/>
+    <path data-cv-key="RF" fill="#4f9b50" stroke="#ffffff" stroke-width="1"
+          d="M353.05,271.99 L406.1,74.0 A410,410 0 0 1 589.9,180.1 L444.96,325.04 A205,205 0 0 0 353.05,271.99 Z"/>
+    <text x="147.5" y="206" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">LF</text>
+    <text x="300"   y="165" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">CF</text>
+    <text x="452.5" y="206" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">RF</text>
+  </g>
+
+  <!-- ===== Infield view (3B / SS / P / 2B / 1B / C) =====
+       Five angular wedges (3B, SS, P up-the-middle, 2B, 1B) over r 52..205, plus a
+       catcher pie at home (r 0..52). No overlap — every zone tiles cleanly. -->
+  <g data-cv-view="infield" title="Infield">
+    <path data-cv-key="3B" fill="#c99a64" stroke="#ffffff" stroke-width="1"
+          d="M263.23,433.23 L155.04,325.04 A205,205 0 0 1 210.13,285.75 L277.20,423.26 A52,52 0 0 0 263.23,433.23 Z"/>
+    <path data-cv-key="SS" fill="#d0a36e" stroke="#ffffff" stroke-width="1"
+          d="M277.20,423.26 L210.13,285.75 A205,205 0 0 1 275.01,266.54 L293.66,418.39 A52,52 0 0 0 277.20,423.26 Z"/>
+    <path data-cv-key="P" fill="#b9854f" stroke="#ffffff" stroke-width="1"
+          d="M293.66,418.39 L275.01,266.54 A205,205 0 0 1 324.99,266.54 L306.34,418.39 A52,52 0 0 0 293.66,418.39 Z"/>
+    <path data-cv-key="2B" fill="#d0a36e" stroke="#ffffff" stroke-width="1"
+          d="M306.34,418.39 L324.99,266.54 A205,205 0 0 1 389.87,285.75 L322.80,423.26 A52,52 0 0 0 306.34,418.39 Z"/>
+    <path data-cv-key="1B" fill="#c99a64" stroke="#ffffff" stroke-width="1"
+          d="M322.80,423.26 L389.87,285.75 A205,205 0 0 1 444.96,325.04 L336.77,433.23 A52,52 0 0 0 322.80,423.26 Z"/>
+    <path data-cv-key="C" fill="#b9854f" stroke="#ffffff" stroke-width="1"
+          d="M300,470 L263.23,433.23 A52,52 0 0 1 336.77,433.23 Z"/>
+    <text x="207.1" y="340" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#3a2a17">3B</text>
+    <text x="254.6" y="317" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#3a2a17">SS</text>
+    <text x="345.4" y="317" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#3a2a17">2B</text>
+    <text x="392.9" y="340" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#3a2a17">1B</text>
+    <text x="300"   y="448" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#3a2a17">C</text>
+    <text x="300"   y="350" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#3a2a17">P</text>
+  </g>
+
+  <!-- ===== Decoration (unkeyed, always shown) ===== -->
+  <g fill="none">
+    <!-- Field perimeter: foul lines + outfield fence (brown band) -->
+    <path stroke="#9c6b3f" stroke-width="8" stroke-linejoin="round"
+          d="M300,470 L10.1,180.1 A410,410 0 0 1 589.9,180.1 Z"/>
+    <!-- White foul lines on top -->
+    <path stroke="#ffffff" stroke-width="3" d="M300,470 L10.1,180.1 Z"/>
+    <path stroke="#ffffff" stroke-width="3" d="M300,470 L589.9,180.1 Z"/>
+    <!-- Infield diamond baselines -->
+    <path stroke="#ffffff" stroke-width="3" d="M300,470 L384.9,385.1 L300,300 L215.1,385.1 Z"/>
+    <!-- Pitcher's mound ring (outline only so the P zone gradient shows through) -->
+    <circle cx="300" cy="345" r="17" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <!-- Bases -->
+    <rect x="379.9" y="380.1" width="10" height="10" fill="#ffffff" stroke="#9c6b3f" stroke-width="1"/>
+    <rect x="295"   y="295"   width="10" height="10" fill="#ffffff" stroke="#9c6b3f" stroke-width="1"/>
+    <rect x="210.1" y="380.1" width="10" height="10" fill="#ffffff" stroke="#9c6b3f" stroke-width="1"/>
+    <rect x="295"   y="463"   width="10" height="11" fill="#ffffff" stroke="#9c6b3f" stroke-width="1"/>
+  </g>
+
+</svg>

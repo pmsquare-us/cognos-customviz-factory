@@ -8,7 +8,7 @@
 //   --description <str>   Description (default "").
 //   --icon <file>         Icon file (.svg/.png/.jpg). Default: the first SVG (matches IBM's export).
 //   --id <str>            Package id. Default: com.ibm.vis.schematic.<random-uuid>.
-//   --out <file>          Output zip path. Default: "<slug-of-name>.schematic.zip".
+//   --out <file>          Output zip path. Default: "<slug-of-name>.schematic.zip" next to the first SVG.
 //
 // Package format reverse-engineered from a real Cognos export (docs/CognosSchematicExample.zip):
 //   zip root contains each SVG + meta.json (NO subfolders). meta.json:
@@ -21,7 +21,7 @@
 // No third-party dependencies — Node built-ins only.
 
 import { readFileSync, writeFileSync } from "node:fs";
-import { basename, extname } from "node:path";
+import { basename, extname, dirname, join } from "node:path";
 import { deflateRawSync } from "node:zlib";
 import { randomUUID } from "node:crypto";
 
@@ -48,7 +48,8 @@ if (svgs.length === 0) fail("provide at least one .svg file");
 
 // ---- assemble entries ----
 const slug = opts.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "schematic";
-const outPath = opts.out || `${slug}.schematic.zip`;
+// Default output sits next to the first SVG so per-viz folders stay self-contained.
+const outPath = opts.out || join(dirname(svgs[0]), `${slug}.schematic.zip`);
 const id = opts.id || `com.ibm.vis.schematic.${randomUUID()}`;
 
 const files = []; // { name, data } at zip root

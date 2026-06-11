@@ -91,6 +91,27 @@ values as the canonical key set (zero mismatch risk). If the schematic instead d
 Either way the match is **exact** (case + whitespace). Start from `templates/Schematic/template.svg`
 or the closest `examples/` entry.
 
+## Geometry checklist (radial / wedge / tiled layouts)
+
+When regions tile a continuous area (pie/wedge spray-charts, radial dials, segmented maps),
+a little planning before emitting path data prevents the two most common defects — overlapping
+regions and labels landing on top of decoration:
+
+- **One tiling primitive per contiguous region set.** Don't mix metaphors (e.g. angular wedges
+  *and* a positioned circle) in the same band — they will overlap. If one position needs to sit
+  "in the middle," give it its own wedge too, rather than dropping a circle on top of its
+  neighbours. (Baseball: the pitcher is a narrow up-the-middle *wedge*, not a circle.)
+- **Share exact boundaries between adjacent bands.** Compute the shared edge once and reuse the
+  same coordinates on both sides (e.g. infield outer arc radius == outfield inner arc radius), so
+  bands abut with no seam or gap.
+- **Decorative overlays that sit on a keyed region must not hide its fill.** Draw them as outline
+  only (`fill="none"` + stroke) so the host's bound-measure gradient still shows through. (Baseball:
+  the mound is a ring outline over the P wedge.)
+- **Place labels at a deliberate radius clear of decoration.** Don't default labels to the region
+  centroid if that lands them on a drawn line (baseline, wall, divider). Pick a radius/offset that
+  sits in open space — fielder labels belong *behind* the basepaths, not on them.
+- **Keep every `<path>` closed** (`z`), including wedges and pie slices, and close arcs explicitly.
+
 ## Packaging (verified format)
 
 The upload `.zip` (reverse-engineered from a real Cognos export) is **flat** — SVG file(s) + a
