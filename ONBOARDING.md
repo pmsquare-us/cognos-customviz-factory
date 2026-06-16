@@ -16,9 +16,12 @@ You don't need to learn the Cognos SDK internals to get started. You do need the
 # Node.js — verified on v24.13.0 / npm 11.6.2
 node --version
 
-# The Cognos Custom Visualization SDK CLI (provides the `customvis` command)
-npm install -g @businessanalytics/customvis
-customvis --version          # expect 1.7.7
+# The Cognos Custom Visualization SDK CLI (provides the `customvis` command).
+# NOT on public npm — download customvis.tgz from your own Cognos Analytics server first:
+#   https://<your-cognos-server>/bi/js/vida/customvis.tgz
+#   (right-click > Save As > All Files; don't use Firefox — it mangles .tgz)
+npm install -g customvis.tgz   # run from the download directory
+customvis --version            # expect 1.7.7  (then you can delete customvis.tgz)
 
 # Clone and open in Claude Code
 git clone https://github.com/pmsquare-us/cognos-customviz-factory.git
