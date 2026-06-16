@@ -34,11 +34,14 @@ It covers **two tracks**:
 
 - **Node.js** (this repo is verified on **v24.13.0**, npm **11.6.2**). Cognos targets:
   CA 11.1.x runs Node 16, CA 12.x runs Node 20 — write version-neutral code.
-- **`customvis` CLI v1.7.7** — the IBM Cognos Custom Visualization SDK:
-  ```
-  npm install -g @businessanalytics/customvis    # provides the `customvis` command
-  ```
-  Verify with `customvis --version`. (Templates pin **D3 v5** — write against v5 APIs.)
+- **`customvis` CLI v1.7.7** — IBM's Cognos Custom Visualization SDK. It is **not published on
+  public npm** (it's IBM commercial software); you download it from your own Cognos Analytics server:
+  1. Download `customvis.tgz` from `https://<your-cognos-server>/bi/js/vida/customvis.tgz`
+     (right-click → *Save As* → set type to *All Files*; don't use Firefox — it mangles `.tgz`).
+  2. From the download directory: `npm install -g customvis.tgz`
+  3. Verify with `customvis --version` (expect 1.7.7), then delete the downloaded `customvis.tgz`.
+
+  (Templates pin **D3 v5** — write against v5 APIs.)
 - **Claude Code** (recommended) — to drive the `/generate-cognos-viz` skill.
 - A **Cognos Analytics** environment with the *Manage Visualizations* capability to preview/deploy.
 
