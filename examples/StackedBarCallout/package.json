@@ -1,0 +1,27 @@
+{
+    "name": "vizbundle-customvis-stackedbarcallout",
+    "version": "1.0.0",
+    "description": "Stacked bar chart with callout labels for thin segments",
+    "repository": {},
+    "devDependencies": {
+        "@babel/core": "~7.23.3",
+        "@babel/plugin-transform-class-properties": "^7.23.3",
+        "@babel/plugin-transform-object-rest-spread": "^7.23.3",
+        "@babel/preset-env": "^7.23.3",
+        "@babel/preset-typescript": "^7.23.3",
+        "@businessanalytics/customvis-lib": "file:customvis-lib.tgz",
+        "@rollup/plugin-babel": "~6.0.4",
+        "@rollup/plugin-commonjs": "~25.0.7",
+        "@rollup/plugin-node-resolve": "~15.2.3",
+        "@types/d3": "^5.7.0"
+    },
+    "dependencies": {},
+    "meta": {
+        "name": "StackedBarCallout",
+        "id": "com.pmsquare.vis.StackedBarCallout",
+        "type": "renderer",
+        "version": "1.0",
+        "description": "Stacked bar chart with callout labels for thin segments",
+        "icon": "icon.svg"
+    }
+}
