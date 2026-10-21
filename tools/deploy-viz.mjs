@@ -16,7 +16,8 @@
 // Endpoints: CA 12.1's public REST API (api/v1) has no custom-visual endpoint, so the upload/update
 // calls are the ones the Manage → Custom visuals page makes. They are captured once per CA version
 // from a logged-in browser (README "Endpoint discovery") and set in the env file as
-// "<METHOD> <path>" with {id} standing for the package id, e.g. COGNOS_VIZ_UPDATE="PUT /bi/v1/…/{id}".
+// "<METHOD> <path>" with {id} standing for the package id (or {storeId} for the visual's content
+// store id, looked up from COGNOS_VIZ_LIST), e.g. COGNOS_VIZ_UPDATE="PUT /v1/…/{id}".
 //
 // Guardrail: an upload publishes code into the client's server, so the first upload of each
 // package id to each environment needs --yes. Later uploads of the same id to that environment
@@ -187,10 +188,24 @@ async function send(ep) {
   return res;
 }
 
+// The list (CA 12.1: GET /v1/visualizations/custom) returns [{ id, name, storeId, ... }]; an
+// update path may address the visual by {storeId} instead of the package {id}.
 let exists = known;
+let storeId = null;
 if (list) {
   const res = await fetch(base + list.path, { headers: headers() });
-  if (res.ok) exists = (await res.text()).includes(meta.id);
+  if (res.ok) {
+    const text = await res.text();
+    exists = text.includes(meta.id);
+    try {
+      const entry = [].concat(JSON.parse(text)).find((v) => v && v.id === meta.id);
+      if (entry && entry.storeId) storeId = entry.storeId;
+    } catch {}
+  }
+}
+if (update && update.path.includes("{storeId}")) {
+  if (exists && !storeId) fail(`COGNOS_VIZ_UPDATE needs {storeId}, but the list response had none for ${meta.id}`);
+  if (storeId) update.path = update.path.replace("{storeId}", encodeURIComponent(storeId));
 }
 const ep = exists && update ? update : upload;
 console.log(`deploy-viz: ${ep.method} ${ep.path}${exists && update ? " (update in place)" : ""}`);

@@ -99,4 +99,8 @@ calls an internal endpoint instead, so capture it:
 
 | CA version | COGNOS_VIZ_UPLOAD | COGNOS_VIZ_UPDATE | COGNOS_VIZ_LIST | format |
 |---|---|---|---|---|
-| _(none captured yet)_ | | | | |
+| 12.1 (pm2 sandbox, 2026-10) | _not captured yet_ | _not captured yet_ | `GET /v1/visualizations/custom?ps=65536` | |
+
+CA 12.1 notes: the list returns `[{ id, name, type, storeId, modificationTime, … }]`, and
+`GET /v1/visualizations/<id>/content/meta.json` reads one visual's meta. If the update path takes
+the content store id, write it as `{storeId}`. `deploy-viz.mjs` fills that in from the list.
