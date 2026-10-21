@@ -40,16 +40,32 @@ is its own origin.
 A personal dashboard in My Folders that holds a *Test visualization* widget bound to sample data.
 Claude creates it through the UI:
 
-1. New → Dashboard → blank template.
-2. Add a data source. Prefer a small existing data module or uploaded file with a few categorical
-   columns and a measure or two. To make one, upload a CSV from the viz's `fixtures/` (a fixture's
-   `rows` flatten to CSV) through *New → Upload files*.
-3. Visualizations panel → **Custom** tab → *Developer widgets* → **Test visualization** (drag it
-   onto the canvas). It renders whatever `customvis start` is serving.
-4. Save as **CV Dev Harness** in My Folders and record its URL in `COGNOS_HARNESS_DASHBOARD`.
+Steps, as done on CA 12.1 (pm2 sandbox, 2026-10):
 
-Slot bindings belong to the widget, so a viz with a different slot list needs rebinding. Claude
-rebinds through the widget's *Fields* panel (drag columns onto the slots the vizdef lists).
+1. Run `customvis start` in the viz folder first. The widget reads the slot list from it.
+2. Upload `tools/cognos-dev/CV Dev Harness data.csv`, the generic sample: 3 categoricals
+   (Product line, Region, Year) × 2 measures, 45 rows. Use *New → Upload files*, or the Cognos
+   MCP `cognos_upload_file`.
+3. In My content, right-click the CSV → **Create dashboard** → keep the blank template → **Create**.
+   The CSV is already the source. (`?perspective=dashboard&isNew=true` does not create one.)
+4. Open the Visualizations panel (left rail) → **Custom** tab → *Developer widgets* → click
+   **Test visualization**, which adds it to the canvas. The Fields panel then lists the slots of
+   the viz being served.
+5. Drag columns onto the slots (`browser_drag` from the source tree to the slot drop zone).
+6. Enlarge the widget by dragging its bottom-right handle. `browser_run_code_unsafe` with
+   `page.mouse` down/move/up works, and the default size is too small to read.
+7. Save (toolbar save icon) → **My content** tab → name **CV Dev Harness** → Save. Record the URL
+   in `COGNOS_HARNESS_DASHBOARD` in this form:
+   `<COGNOS_URL>/?perspective=dashboard&id=<storeId>&objRef=<storeId>&boardId=<storeId>&isAuthoringMode=false`.
+   Plain `?objRef=<storeId>` and `?perspective=dashboard&id=<storeId>` both bounce to home.
+
+The slot bindings belong to the widget, so a viz with a different slot list needs rebinding in
+edit mode through the Fields panel.
+
+Notes:
+- `fetch` calls from the page to `/v1/...` need
+  `X-XSRF-TOKEN: <XSRF-TOKEN cookie>`, or they return 403.
+- The Test visualization widget shows "This is a preview…" over the viz. That's expected.
 
 ## Iteration loop (in Cognos)
 
