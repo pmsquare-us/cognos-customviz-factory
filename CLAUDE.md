@@ -27,6 +27,10 @@ templates/   Known-good baselines. customvis: BarChart / Basic / BasicJS. Schema
 examples/    Finished viz & schematics, harvested after each build. Few-shot references.
 workbench/   Scratch area where new viz are scaffolded and built. Disposable.
 tools/       Schematic helpers: validate-schematic-svg.mjs (lint), pack-schematic.mjs (build .zip).
+             harness/ — offline render harness (fixtures + mock host); cognos-dev/ — Playwright
+             browser loop in Cognos; deploy-viz.mjs — upload/update a package to a client env.
+.mcp.json    Project Playwright MCP server (Chrome, persistent profile in .browser-profile/).
+.env.<client> Per-client Cognos settings (gitignored; template cognos.env.example).
 .claude/skills/generate-cognos-viz/        /generate-cognos-viz orchestrator (code viz).
 .claude/skills/generate-cognos-schematic/  /generate-cognos-schematic orchestrator (schematics).
 ```
@@ -40,11 +44,16 @@ tools/       Schematic helpers: validate-schematic-svg.mjs (lint), pack-schemati
    every `cols[i]` / `value(i)` / `tuple(i)` index in `Main.ts`. See `docs/vizdef-reference.md`.
 2. **Scaffold** — `customvis create <Name> -t BarChart` in `workbench/`, overwrite `vizdef.xml`.
 3. **Implement `renderer/Main.ts`** — D3 port → `docs/d3-porting-guide.md`; fresh → `docs/patterns.md`.
-4. **Build & preview** — `customvis start`, validate in Cognos (Dashboard *Custom → Test
-   visualization* / Report *Advanced → Custom visual preview*), iterate with **Refresh**.
+4. **Build & preview** — you look at your own output. Offline first: `customvis build` +
+   `node tools/harness/serve.mjs <viz>` with `fixtures/*.json`, checked in the Playwright browser
+   (status/errors/screenshot). Then in Cognos: `customvis start` + the client's *CV Dev Harness*
+   dashboard (*Test visualization* widget), **Refresh**, read the console. See `tools/harness/README.md`,
+   `tools/cognos-dev/README.md`.
 5. **Polish** — properties, legend, `nls/`, responsiveness, perf via `_info.reason`.
-6. **Pack/Deploy & harvest** — `customvis pack` → upload via *Manage → Customization →
-   Custom visuals*; copy the finished viz into `examples/`.
+6. **Pack/Deploy & harvest** — `node tools/deploy-viz.mjs --env <client> <viz>` (apikey/native),
+   or upload through *Manage → Customization → Custom visuals* in the Playwright browser (SSO).
+   **Ask before the first upload to a client environment.** Copy the finished viz (with
+   `fixtures/`) into `examples/`.
 
 ## The schematic playbook (annotated-SVG track — `/generate-cognos-schematic`)
 

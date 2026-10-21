@@ -49,9 +49,13 @@ export default class extends RenderBase
             .domain( cats )
             .range( [ margin.top, node.clientHeight - margin.bottom ] )
             .padding( 0.3 );
+        // Reserve room on the right for the widest value label so it isn't clipped.
+        const labelRoom = showLabels
+            ? Math.max( ...rows.map( _r => _r.caption( VALUES ).length ) ) * 7 + dotRadius + 8
+            : dotRadius;
         const x = d3.scaleLinear()
             .domain( [ 0, maxValue ] )
-            .range( [ margin.left, node.clientWidth - margin.right ] )
+            .range( [ margin.left, node.clientWidth - Math.max( margin.right, labelRoom ) ] )
             .nice();
 
         const cy = ( row: DataPoint ): number => y( row.tuple( CATEGORIES ).key )! + y.bandwidth() / 2;
@@ -64,7 +68,8 @@ export default class extends RenderBase
             .attr( "x2", d => x( d.value( VALUES ) ) )
             .attr( "y1", cy )
             .attr( "y2", cy )
-            .attr( "stroke", d => palette.getOutlineColor( d ) )
+            // Fill color, not outline: getOutlineColor is null unless highlighted/selected.
+            .attr( "stroke", d => palette.getFillColor( d ) )
             .attr( "stroke-width", 2 );
 
         // Dots at the value.

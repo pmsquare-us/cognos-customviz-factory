@@ -24,3 +24,13 @@ workbench/
 /docs/CognosSchematicExample.zip
 # Generated schematic upload packages (built by tools/pack-schematic.mjs):
 *.schematic.zip
+
+# Claude dev loop — local state, never committed:
+# Playwright browser profile (holds Cognos sign-in cookies):
+/.browser-profile/
+# Per-client Cognos settings (may hold API keys / passwords); the template is committed:
+/.env.*
+# deploy-viz.mjs record of which package ids went to which environment:
+/.cognos/
+# Playwright MCP screenshots, snapshots, console logs:
+/artifacts/

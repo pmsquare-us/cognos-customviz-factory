@@ -1,0 +1,11 @@
+{
+  "mapping": { "categories": "Product line", "values": "Revenue" },
+  "rows": [
+    { "categories": "Camping Equipment", "values": 1589732 },
+    { "categories": "Golf Equipment", "values": 612904 },
+    { "categories": "Mountaineering Equipment", "values": 402155 },
+    { "categories": "Outdoor Protection", "values": 98340 },
+    { "categories": "Personal Accessories", "values": 1247870 }
+  ],
+  "props": { "dotSize": "12px" }
+}

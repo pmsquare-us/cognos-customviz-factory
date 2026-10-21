@@ -1,0 +1,17 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "userDataDir": ".browser-profile",
+    "launchOptions": {
+      "channel": "chrome",
+      "headless": false,
+      "args": [
+        "--disable-features=BlockInsecurePrivateNetworkRequests,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults,LocalNetworkAccessChecks"
+      ]
+    },
+    "contextOptions": { "viewport": { "width": 1440, "height": 900 } }
+  },
+  "outputDir": "artifacts/playwright",
+  "console": { "level": "info" },
+  "timeouts": { "navigation": 90000 }
+}

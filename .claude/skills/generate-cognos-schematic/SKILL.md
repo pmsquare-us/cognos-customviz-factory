@@ -83,12 +83,16 @@ node tools/pack-schematic.mjs --name "<Display Name>" [--description "…"] [--i
 Produces `<slug>.schematic.zip` in the verified Cognos format. (UI fallback documented in the guide
 if the format is ever rejected.)
 
-## Stage 5 — Deploy & preview (guide the user)
+## Stage 5 — Deploy & preview
 
-Upload via *Manage → Customization → Custom visuals → Upload custom visual* (requires Manage
-Visualizations). Then drag **Schematic preview** in a report, bind a dataset whose category values
-match the keys + a measure, toggle **Highlight regions** to confirm all regions are mapped, and
-verify views / pan-zoom / selection.
+Upload the zip (requires Manage Visualizations). With `COGNOS_AUTH=apikey|native` and captured
+endpoints, run `node tools/deploy-viz.mjs --env <client> <slug>.schematic.zip`. Otherwise upload
+through *Manage → Customization* in the Playwright browser (`tools/cognos-dev/README.md` "Upload via
+the browser"). **Ask before the first upload to a client environment.** Then, in the Playwright
+browser, drag **Schematic preview** into a report and bind a dataset whose category values match
+the keys, plus a measure. Toggle **Highlight regions** and screenshot to confirm all regions are
+mapped, and check views, pan-zoom, and selection. If the Playwright tools aren't available, walk
+the user through these checks instead.
 
 ## Stage 6 — Harvest
 
