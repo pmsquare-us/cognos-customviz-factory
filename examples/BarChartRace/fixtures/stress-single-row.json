@@ -1,0 +1,21 @@
+{
+ "note": "one data point",
+ "mapping": {
+  "time": "Year",
+  "name": "Company",
+  "category": "Sector",
+  "value": "Market cap ($B)"
+ },
+ "rows": [
+  {
+   "time": "2018",
+   "name": "Apple",
+   "category": "Tech",
+   "value": 120
+  }
+ ],
+ "props": {
+  "topN": 6,
+  "stepDuration": 150
+ }
+}

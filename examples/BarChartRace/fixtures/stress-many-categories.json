@@ -1,0 +1,915 @@
+{
+ "note": "150 members in \"name\"",
+ "mapping": {
+  "time": "Year",
+  "name": "Company",
+  "category": "Sector",
+  "value": "Market cap ($B)"
+ },
+ "rows": [
+  {
+   "time": "2018",
+   "name": "Category 001",
+   "category": "Tech",
+   "value": 0
+  },
+  {
+   "time": "2018",
+   "name": "Category 002",
+   "category": "Tech",
+   "value": 847.81
+  },
+  {
+   "time": "2018",
+   "name": "Category 003",
+   "category": "Tech",
+   "value": 83.66
+  },
+  {
+   "time": "2018",
+   "name": "Category 004",
+   "category": "Tech",
+   "value": 44.33
+  },
+  {
+   "time": "2018",
+   "name": "Category 005",
+   "category": "Tech",
+   "value": 531.98
+  },
+  {
+   "time": "2018",
+   "name": "Category 006",
+   "category": "Tech",
+   "value": 283.78
+  },
+  {
+   "time": "2018",
+   "name": "Category 007",
+   "category": "Tech",
+   "value": 108.45
+  },
+  {
+   "time": "2018",
+   "name": "Category 008",
+   "category": "Tech",
+   "value": 565.58
+  },
+  {
+   "time": "2018",
+   "name": "Category 009",
+   "category": "Tech",
+   "value": 570.14
+  },
+  {
+   "time": "2018",
+   "name": "Category 010",
+   "category": "Tech",
+   "value": 294.69
+  },
+  {
+   "time": "2018",
+   "name": "Category 011",
+   "category": "Tech",
+   "value": 468.56
+  },
+  {
+   "time": "2018",
+   "name": "Category 012",
+   "category": "Tech",
+   "value": 404.39
+  },
+  {
+   "time": "2018",
+   "name": "Category 013",
+   "category": "Tech",
+   "value": 667.09
+  },
+  {
+   "time": "2018",
+   "name": "Category 014",
+   "category": "Tech",
+   "value": 58.57
+  },
+  {
+   "time": "2018",
+   "name": "Category 015",
+   "category": "Tech",
+   "value": 140.05
+  },
+  {
+   "time": "2018",
+   "name": "Category 016",
+   "category": "Tech",
+   "value": 501.12
+  },
+  {
+   "time": "2018",
+   "name": "Category 017",
+   "category": "Tech",
+   "value": 487.27
+  },
+  {
+   "time": "2018",
+   "name": "Category 018",
+   "category": "Tech",
+   "value": 2.9
+  },
+  {
+   "time": "2018",
+   "name": "Category 019",
+   "category": "Tech",
+   "value": 467.73
+  },
+  {
+   "time": "2018",
+   "name": "Category 020",
+   "category": "Tech",
+   "value": 218.93
+  },
+  {
+   "time": "2018",
+   "name": "Category 021",
+   "category": "Tech",
+   "value": 850.83
+  },
+  {
+   "time": "2018",
+   "name": "Category 022",
+   "category": "Tech",
+   "value": 651.91
+  },
+  {
+   "time": "2018",
+   "name": "Category 023",
+   "category": "Tech",
+   "value": 15.09
+  },
+  {
+   "time": "2018",
+   "name": "Category 024",
+   "category": "Tech",
+   "value": 263.23
+  },
+  {
+   "time": "2018",
+   "name": "Category 025",
+   "category": "Tech",
+   "value": 852.24
+  },
+  {
+   "time": "2018",
+   "name": "Category 026",
+   "category": "Tech",
+   "value": 474.03
+  },
+  {
+   "time": "2018",
+   "name": "Category 027",
+   "category": "Tech",
+   "value": 414.42
+  },
+  {
+   "time": "2018",
+   "name": "Category 028",
+   "category": "Tech",
+   "value": 333.43
+  },
+  {
+   "time": "2018",
+   "name": "Category 029",
+   "category": "Tech",
+   "value": 831.74
+  },
+  {
+   "time": "2018",
+   "name": "Category 030",
+   "category": "Tech",
+   "value": 825.07
+  },
+  {
+   "time": "2018",
+   "name": "Category 031",
+   "category": "Tech",
+   "value": 138.57
+  },
+  {
+   "time": "2018",
+   "name": "Category 032",
+   "category": "Tech",
+   "value": 112.48
+  },
+  {
+   "time": "2018",
+   "name": "Category 033",
+   "category": "Tech",
+   "value": 700.86
+  },
+  {
+   "time": "2018",
+   "name": "Category 034",
+   "category": "Tech",
+   "value": 110.39
+  },
+  {
+   "time": "2018",
+   "name": "Category 035",
+   "category": "Tech",
+   "value": 23.28
+  },
+  {
+   "time": "2018",
+   "name": "Category 036",
+   "category": "Tech",
+   "value": 88.59
+  },
+  {
+   "time": "2018",
+   "name": "Category 037",
+   "category": "Tech",
+   "value": 183.59
+  },
+  {
+   "time": "2018",
+   "name": "Category 038",
+   "category": "Tech",
+   "value": 86.95
+  },
+  {
+   "time": "2018",
+   "name": "Category 039",
+   "category": "Tech",
+   "value": 878.46
+  },
+  {
+   "time": "2018",
+   "name": "Category 040",
+   "category": "Tech",
+   "value": 310.66
+  },
+  {
+   "time": "2018",
+   "name": "Category 041",
+   "category": "Tech",
+   "value": 531.84
+  },
+  {
+   "time": "2018",
+   "name": "Category 042",
+   "category": "Tech",
+   "value": 770.62
+  },
+  {
+   "time": "2018",
+   "name": "Category 043",
+   "category": "Tech",
+   "value": 3.44
+  },
+  {
+   "time": "2018",
+   "name": "Category 044",
+   "category": "Tech",
+   "value": 74.8
+  },
+  {
+   "time": "2018",
+   "name": "Category 045",
+   "category": "Tech",
+   "value": 314.31
+  },
+  {
+   "time": "2018",
+   "name": "Category 046",
+   "category": "Tech",
+   "value": 258.88
+  },
+  {
+   "time": "2018",
+   "name": "Category 047",
+   "category": "Tech",
+   "value": 177.61
+  },
+  {
+   "time": "2018",
+   "name": "Category 048",
+   "category": "Tech",
+   "value": 37.23
+  },
+  {
+   "time": "2018",
+   "name": "Category 049",
+   "category": "Tech",
+   "value": 826.23
+  },
+  {
+   "time": "2018",
+   "name": "Category 050",
+   "category": "Tech",
+   "value": 3.01
+  },
+  {
+   "time": "2018",
+   "name": "Category 051",
+   "category": "Tech",
+   "value": 133.56
+  },
+  {
+   "time": "2018",
+   "name": "Category 052",
+   "category": "Tech",
+   "value": 118.42
+  },
+  {
+   "time": "2018",
+   "name": "Category 053",
+   "category": "Tech",
+   "value": 441.46
+  },
+  {
+   "time": "2018",
+   "name": "Category 054",
+   "category": "Tech",
+   "value": 854.42
+  },
+  {
+   "time": "2018",
+   "name": "Category 055",
+   "category": "Tech",
+   "value": 265.08
+  },
+  {
+   "time": "2018",
+   "name": "Category 056",
+   "category": "Tech",
+   "value": 27.41
+  },
+  {
+   "time": "2018",
+   "name": "Category 057",
+   "category": "Tech",
+   "value": 164.53
+  },
+  {
+   "time": "2018",
+   "name": "Category 058",
+   "category": "Tech",
+   "value": 80.43
+  },
+  {
+   "time": "2018",
+   "name": "Category 059",
+   "category": "Tech",
+   "value": 132.83
+  },
+  {
+   "time": "2018",
+   "name": "Category 060",
+   "category": "Tech",
+   "value": 179.73
+  },
+  {
+   "time": "2018",
+   "name": "Category 061",
+   "category": "Tech",
+   "value": 110.6
+  },
+  {
+   "time": "2018",
+   "name": "Category 062",
+   "category": "Tech",
+   "value": 282.66
+  },
+  {
+   "time": "2018",
+   "name": "Category 063",
+   "category": "Tech",
+   "value": 377.05
+  },
+  {
+   "time": "2018",
+   "name": "Category 064",
+   "category": "Tech",
+   "value": 54.4
+  },
+  {
+   "time": "2018",
+   "name": "Category 065",
+   "category": "Tech",
+   "value": 821.73
+  },
+  {
+   "time": "2018",
+   "name": "Category 066",
+   "category": "Tech",
+   "value": 209.61
+  },
+  {
+   "time": "2018",
+   "name": "Category 067",
+   "category": "Tech",
+   "value": 744.79
+  },
+  {
+   "time": "2018",
+   "name": "Category 068",
+   "category": "Tech",
+   "value": 403.39
+  },
+  {
+   "time": "2018",
+   "name": "Category 069",
+   "category": "Tech",
+   "value": 402.4
+  },
+  {
+   "time": "2018",
+   "name": "Category 070",
+   "category": "Tech",
+   "value": 266.51
+  },
+  {
+   "time": "2018",
+   "name": "Category 071",
+   "category": "Tech",
+   "value": 254.97
+  },
+  {
+   "time": "2018",
+   "name": "Category 072",
+   "category": "Tech",
+   "value": 474.71
+  },
+  {
+   "time": "2018",
+   "name": "Category 073",
+   "category": "Tech",
+   "value": 882.8
+  },
+  {
+   "time": "2018",
+   "name": "Category 074",
+   "category": "Tech",
+   "value": 157.39
+  },
+  {
+   "time": "2018",
+   "name": "Category 075",
+   "category": "Tech",
+   "value": 501.59
+  },
+  {
+   "time": "2018",
+   "name": "Category 076",
+   "category": "Tech",
+   "value": 63.06
+  },
+  {
+   "time": "2018",
+   "name": "Category 077",
+   "category": "Tech",
+   "value": 344.4
+  },
+  {
+   "time": "2018",
+   "name": "Category 078",
+   "category": "Tech",
+   "value": 122.91
+  },
+  {
+   "time": "2018",
+   "name": "Category 079",
+   "category": "Tech",
+   "value": 109.3
+  },
+  {
+   "time": "2018",
+   "name": "Category 080",
+   "category": "Tech",
+   "value": 153.22
+  },
+  {
+   "time": "2018",
+   "name": "Category 081",
+   "category": "Tech",
+   "value": 631.58
+  },
+  {
+   "time": "2018",
+   "name": "Category 082",
+   "category": "Tech",
+   "value": 770.11
+  },
+  {
+   "time": "2018",
+   "name": "Category 083",
+   "category": "Tech",
+   "value": 12.34
+  },
+  {
+   "time": "2018",
+   "name": "Category 084",
+   "category": "Tech",
+   "value": 671.07
+  },
+  {
+   "time": "2018",
+   "name": "Category 085",
+   "category": "Tech",
+   "value": 6.04
+  },
+  {
+   "time": "2018",
+   "name": "Category 086",
+   "category": "Tech",
+   "value": 165.49
+  },
+  {
+   "time": "2018",
+   "name": "Category 087",
+   "category": "Tech",
+   "value": 23.58
+  },
+  {
+   "time": "2018",
+   "name": "Category 088",
+   "category": "Tech",
+   "value": 6.07
+  },
+  {
+   "time": "2018",
+   "name": "Category 089",
+   "category": "Tech",
+   "value": 992.42
+  },
+  {
+   "time": "2018",
+   "name": "Category 090",
+   "category": "Tech",
+   "value": 48.4
+  },
+  {
+   "time": "2018",
+   "name": "Category 091",
+   "category": "Tech",
+   "value": 399.88
+  },
+  {
+   "time": "2018",
+   "name": "Category 092",
+   "category": "Tech",
+   "value": 20.81
+  },
+  {
+   "time": "2018",
+   "name": "Category 093",
+   "category": "Tech",
+   "value": 208.95
+  },
+  {
+   "time": "2018",
+   "name": "Category 094",
+   "category": "Tech",
+   "value": 351.55
+  },
+  {
+   "time": "2018",
+   "name": "Category 095",
+   "category": "Tech",
+   "value": 18.99
+  },
+  {
+   "time": "2018",
+   "name": "Category 096",
+   "category": "Tech",
+   "value": 849.85
+  },
+  {
+   "time": "2018",
+   "name": "Category 097",
+   "category": "Tech",
+   "value": 782.46
+  },
+  {
+   "time": "2018",
+   "name": "Category 098",
+   "category": "Tech",
+   "value": 793.12
+  },
+  {
+   "time": "2018",
+   "name": "Category 099",
+   "category": "Tech",
+   "value": 783.62
+  },
+  {
+   "time": "2018",
+   "name": "Category 100",
+   "category": "Tech",
+   "value": 824.03
+  },
+  {
+   "time": "2018",
+   "name": "Category 101",
+   "category": "Tech",
+   "value": 579.32
+  },
+  {
+   "time": "2018",
+   "name": "Category 102",
+   "category": "Tech",
+   "value": 75.86
+  },
+  {
+   "time": "2018",
+   "name": "Category 103",
+   "category": "Tech",
+   "value": 0.11
+  },
+  {
+   "time": "2018",
+   "name": "Category 104",
+   "category": "Tech",
+   "value": 61.65
+  },
+  {
+   "time": "2018",
+   "name": "Category 105",
+   "category": "Tech",
+   "value": 5.78
+  },
+  {
+   "time": "2018",
+   "name": "Category 106",
+   "category": "Tech",
+   "value": 0
+  },
+  {
+   "time": "2018",
+   "name": "Category 107",
+   "category": "Tech",
+   "value": 380.49
+  },
+  {
+   "time": "2018",
+   "name": "Category 108",
+   "category": "Tech",
+   "value": 53.53
+  },
+  {
+   "time": "2018",
+   "name": "Category 109",
+   "category": "Tech",
+   "value": 549.3
+  },
+  {
+   "time": "2018",
+   "name": "Category 110",
+   "category": "Tech",
+   "value": 239.47
+  },
+  {
+   "time": "2018",
+   "name": "Category 111",
+   "category": "Tech",
+   "value": 472.69
+  },
+  {
+   "time": "2018",
+   "name": "Category 112",
+   "category": "Tech",
+   "value": 56.67
+  },
+  {
+   "time": "2018",
+   "name": "Category 113",
+   "category": "Tech",
+   "value": 778.08
+  },
+  {
+   "time": "2018",
+   "name": "Category 114",
+   "category": "Tech",
+   "value": 55.3
+  },
+  {
+   "time": "2018",
+   "name": "Category 115",
+   "category": "Tech",
+   "value": 139.83
+  },
+  {
+   "time": "2018",
+   "name": "Category 116",
+   "category": "Tech",
+   "value": 799.73
+  },
+  {
+   "time": "2018",
+   "name": "Category 117",
+   "category": "Tech",
+   "value": 14.01
+  },
+  {
+   "time": "2018",
+   "name": "Category 118",
+   "category": "Tech",
+   "value": 239.38
+  },
+  {
+   "time": "2018",
+   "name": "Category 119",
+   "category": "Tech",
+   "value": 0.01
+  },
+  {
+   "time": "2018",
+   "name": "Category 120",
+   "category": "Tech",
+   "value": 833.55
+  },
+  {
+   "time": "2018",
+   "name": "Category 121",
+   "category": "Tech",
+   "value": 405.68
+  },
+  {
+   "time": "2018",
+   "name": "Category 122",
+   "category": "Tech",
+   "value": 850.3
+  },
+  {
+   "time": "2018",
+   "name": "Category 123",
+   "category": "Tech",
+   "value": 0.44
+  },
+  {
+   "time": "2018",
+   "name": "Category 124",
+   "category": "Tech",
+   "value": 810.1
+  },
+  {
+   "time": "2018",
+   "name": "Category 125",
+   "category": "Tech",
+   "value": 35.39
+  },
+  {
+   "time": "2018",
+   "name": "Category 126",
+   "category": "Tech",
+   "value": 938.45
+  },
+  {
+   "time": "2018",
+   "name": "Category 127",
+   "category": "Tech",
+   "value": 319.54
+  },
+  {
+   "time": "2018",
+   "name": "Category 128",
+   "category": "Tech",
+   "value": 461.55
+  },
+  {
+   "time": "2018",
+   "name": "Category 129",
+   "category": "Tech",
+   "value": 70.9
+  },
+  {
+   "time": "2018",
+   "name": "Category 130",
+   "category": "Tech",
+   "value": 49.63
+  },
+  {
+   "time": "2018",
+   "name": "Category 131",
+   "category": "Tech",
+   "value": 43.65
+  },
+  {
+   "time": "2018",
+   "name": "Category 132",
+   "category": "Tech",
+   "value": 318.56
+  },
+  {
+   "time": "2018",
+   "name": "Category 133",
+   "category": "Tech",
+   "value": 2.74
+  },
+  {
+   "time": "2018",
+   "name": "Category 134",
+   "category": "Tech",
+   "value": 592.01
+  },
+  {
+   "time": "2018",
+   "name": "Category 135",
+   "category": "Tech",
+   "value": 490.98
+  },
+  {
+   "time": "2018",
+   "name": "Category 136",
+   "category": "Tech",
+   "value": 509.91
+  },
+  {
+   "time": "2018",
+   "name": "Category 137",
+   "category": "Tech",
+   "value": 248.19
+  },
+  {
+   "time": "2018",
+   "name": "Category 138",
+   "category": "Tech",
+   "value": 1.07
+  },
+  {
+   "time": "2018",
+   "name": "Category 139",
+   "category": "Tech",
+   "value": 12.17
+  },
+  {
+   "time": "2018",
+   "name": "Category 140",
+   "category": "Tech",
+   "value": 844.62
+  },
+  {
+   "time": "2018",
+   "name": "Category 141",
+   "category": "Tech",
+   "value": 17.1
+  },
+  {
+   "time": "2018",
+   "name": "Category 142",
+   "category": "Tech",
+   "value": 473.15
+  },
+  {
+   "time": "2018",
+   "name": "Category 143",
+   "category": "Tech",
+   "value": 797.49
+  },
+  {
+   "time": "2018",
+   "name": "Category 144",
+   "category": "Tech",
+   "value": 1.37
+  },
+  {
+   "time": "2018",
+   "name": "Category 145",
+   "category": "Tech",
+   "value": 779.93
+  },
+  {
+   "time": "2018",
+   "name": "Category 146",
+   "category": "Tech",
+   "value": 741.95
+  },
+  {
+   "time": "2018",
+   "name": "Category 147",
+   "category": "Tech",
+   "value": 985.53
+  },
+  {
+   "time": "2018",
+   "name": "Category 148",
+   "category": "Tech",
+   "value": 910.67
+  },
+  {
+   "time": "2018",
+   "name": "Category 149",
+   "category": "Tech",
+   "value": 585.05
+  },
+  {
+   "time": "2018",
+   "name": "Category 150",
+   "category": "Tech",
+   "value": 176.07
+  }
+ ],
+ "props": {
+  "topN": 6,
+  "stepDuration": 150
+ }
+}

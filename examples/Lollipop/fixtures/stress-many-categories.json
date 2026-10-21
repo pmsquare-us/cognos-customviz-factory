@@ -1,0 +1,609 @@
+{
+ "note": "150 members in \"categories\"",
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": [
+  {
+   "categories": "Category 001",
+   "values": 0
+  },
+  {
+   "categories": "Category 002",
+   "values": 847.81
+  },
+  {
+   "categories": "Category 003",
+   "values": 83.66
+  },
+  {
+   "categories": "Category 004",
+   "values": 44.33
+  },
+  {
+   "categories": "Category 005",
+   "values": 531.98
+  },
+  {
+   "categories": "Category 006",
+   "values": 283.78
+  },
+  {
+   "categories": "Category 007",
+   "values": 108.45
+  },
+  {
+   "categories": "Category 008",
+   "values": 565.58
+  },
+  {
+   "categories": "Category 009",
+   "values": 570.14
+  },
+  {
+   "categories": "Category 010",
+   "values": 294.69
+  },
+  {
+   "categories": "Category 011",
+   "values": 468.56
+  },
+  {
+   "categories": "Category 012",
+   "values": 404.39
+  },
+  {
+   "categories": "Category 013",
+   "values": 667.09
+  },
+  {
+   "categories": "Category 014",
+   "values": 58.57
+  },
+  {
+   "categories": "Category 015",
+   "values": 140.05
+  },
+  {
+   "categories": "Category 016",
+   "values": 501.12
+  },
+  {
+   "categories": "Category 017",
+   "values": 487.27
+  },
+  {
+   "categories": "Category 018",
+   "values": 2.9
+  },
+  {
+   "categories": "Category 019",
+   "values": 467.73
+  },
+  {
+   "categories": "Category 020",
+   "values": 218.93
+  },
+  {
+   "categories": "Category 021",
+   "values": 850.83
+  },
+  {
+   "categories": "Category 022",
+   "values": 651.91
+  },
+  {
+   "categories": "Category 023",
+   "values": 15.09
+  },
+  {
+   "categories": "Category 024",
+   "values": 263.23
+  },
+  {
+   "categories": "Category 025",
+   "values": 852.24
+  },
+  {
+   "categories": "Category 026",
+   "values": 474.03
+  },
+  {
+   "categories": "Category 027",
+   "values": 414.42
+  },
+  {
+   "categories": "Category 028",
+   "values": 333.43
+  },
+  {
+   "categories": "Category 029",
+   "values": 831.74
+  },
+  {
+   "categories": "Category 030",
+   "values": 825.07
+  },
+  {
+   "categories": "Category 031",
+   "values": 138.57
+  },
+  {
+   "categories": "Category 032",
+   "values": 112.48
+  },
+  {
+   "categories": "Category 033",
+   "values": 700.86
+  },
+  {
+   "categories": "Category 034",
+   "values": 110.39
+  },
+  {
+   "categories": "Category 035",
+   "values": 23.28
+  },
+  {
+   "categories": "Category 036",
+   "values": 88.59
+  },
+  {
+   "categories": "Category 037",
+   "values": 183.59
+  },
+  {
+   "categories": "Category 038",
+   "values": 86.95
+  },
+  {
+   "categories": "Category 039",
+   "values": 878.46
+  },
+  {
+   "categories": "Category 040",
+   "values": 310.66
+  },
+  {
+   "categories": "Category 041",
+   "values": 531.84
+  },
+  {
+   "categories": "Category 042",
+   "values": 770.62
+  },
+  {
+   "categories": "Category 043",
+   "values": 3.44
+  },
+  {
+   "categories": "Category 044",
+   "values": 74.8
+  },
+  {
+   "categories": "Category 045",
+   "values": 314.31
+  },
+  {
+   "categories": "Category 046",
+   "values": 258.88
+  },
+  {
+   "categories": "Category 047",
+   "values": 177.61
+  },
+  {
+   "categories": "Category 048",
+   "values": 37.23
+  },
+  {
+   "categories": "Category 049",
+   "values": 826.23
+  },
+  {
+   "categories": "Category 050",
+   "values": 3.01
+  },
+  {
+   "categories": "Category 051",
+   "values": 133.56
+  },
+  {
+   "categories": "Category 052",
+   "values": 118.42
+  },
+  {
+   "categories": "Category 053",
+   "values": 441.46
+  },
+  {
+   "categories": "Category 054",
+   "values": 854.42
+  },
+  {
+   "categories": "Category 055",
+   "values": 265.08
+  },
+  {
+   "categories": "Category 056",
+   "values": 27.41
+  },
+  {
+   "categories": "Category 057",
+   "values": 164.53
+  },
+  {
+   "categories": "Category 058",
+   "values": 80.43
+  },
+  {
+   "categories": "Category 059",
+   "values": 132.83
+  },
+  {
+   "categories": "Category 060",
+   "values": 179.73
+  },
+  {
+   "categories": "Category 061",
+   "values": 110.6
+  },
+  {
+   "categories": "Category 062",
+   "values": 282.66
+  },
+  {
+   "categories": "Category 063",
+   "values": 377.05
+  },
+  {
+   "categories": "Category 064",
+   "values": 54.4
+  },
+  {
+   "categories": "Category 065",
+   "values": 821.73
+  },
+  {
+   "categories": "Category 066",
+   "values": 209.61
+  },
+  {
+   "categories": "Category 067",
+   "values": 744.79
+  },
+  {
+   "categories": "Category 068",
+   "values": 403.39
+  },
+  {
+   "categories": "Category 069",
+   "values": 402.4
+  },
+  {
+   "categories": "Category 070",
+   "values": 266.51
+  },
+  {
+   "categories": "Category 071",
+   "values": 254.97
+  },
+  {
+   "categories": "Category 072",
+   "values": 474.71
+  },
+  {
+   "categories": "Category 073",
+   "values": 882.8
+  },
+  {
+   "categories": "Category 074",
+   "values": 157.39
+  },
+  {
+   "categories": "Category 075",
+   "values": 501.59
+  },
+  {
+   "categories": "Category 076",
+   "values": 63.06
+  },
+  {
+   "categories": "Category 077",
+   "values": 344.4
+  },
+  {
+   "categories": "Category 078",
+   "values": 122.91
+  },
+  {
+   "categories": "Category 079",
+   "values": 109.3
+  },
+  {
+   "categories": "Category 080",
+   "values": 153.22
+  },
+  {
+   "categories": "Category 081",
+   "values": 631.58
+  },
+  {
+   "categories": "Category 082",
+   "values": 770.11
+  },
+  {
+   "categories": "Category 083",
+   "values": 12.34
+  },
+  {
+   "categories": "Category 084",
+   "values": 671.07
+  },
+  {
+   "categories": "Category 085",
+   "values": 6.04
+  },
+  {
+   "categories": "Category 086",
+   "values": 165.49
+  },
+  {
+   "categories": "Category 087",
+   "values": 23.58
+  },
+  {
+   "categories": "Category 088",
+   "values": 6.07
+  },
+  {
+   "categories": "Category 089",
+   "values": 992.42
+  },
+  {
+   "categories": "Category 090",
+   "values": 48.4
+  },
+  {
+   "categories": "Category 091",
+   "values": 399.88
+  },
+  {
+   "categories": "Category 092",
+   "values": 20.81
+  },
+  {
+   "categories": "Category 093",
+   "values": 208.95
+  },
+  {
+   "categories": "Category 094",
+   "values": 351.55
+  },
+  {
+   "categories": "Category 095",
+   "values": 18.99
+  },
+  {
+   "categories": "Category 096",
+   "values": 849.85
+  },
+  {
+   "categories": "Category 097",
+   "values": 782.46
+  },
+  {
+   "categories": "Category 098",
+   "values": 793.12
+  },
+  {
+   "categories": "Category 099",
+   "values": 783.62
+  },
+  {
+   "categories": "Category 100",
+   "values": 824.03
+  },
+  {
+   "categories": "Category 101",
+   "values": 579.32
+  },
+  {
+   "categories": "Category 102",
+   "values": 75.86
+  },
+  {
+   "categories": "Category 103",
+   "values": 0.11
+  },
+  {
+   "categories": "Category 104",
+   "values": 61.65
+  },
+  {
+   "categories": "Category 105",
+   "values": 5.78
+  },
+  {
+   "categories": "Category 106",
+   "values": 0
+  },
+  {
+   "categories": "Category 107",
+   "values": 380.49
+  },
+  {
+   "categories": "Category 108",
+   "values": 53.53
+  },
+  {
+   "categories": "Category 109",
+   "values": 549.3
+  },
+  {
+   "categories": "Category 110",
+   "values": 239.47
+  },
+  {
+   "categories": "Category 111",
+   "values": 472.69
+  },
+  {
+   "categories": "Category 112",
+   "values": 56.67
+  },
+  {
+   "categories": "Category 113",
+   "values": 778.08
+  },
+  {
+   "categories": "Category 114",
+   "values": 55.3
+  },
+  {
+   "categories": "Category 115",
+   "values": 139.83
+  },
+  {
+   "categories": "Category 116",
+   "values": 799.73
+  },
+  {
+   "categories": "Category 117",
+   "values": 14.01
+  },
+  {
+   "categories": "Category 118",
+   "values": 239.38
+  },
+  {
+   "categories": "Category 119",
+   "values": 0.01
+  },
+  {
+   "categories": "Category 120",
+   "values": 833.55
+  },
+  {
+   "categories": "Category 121",
+   "values": 405.68
+  },
+  {
+   "categories": "Category 122",
+   "values": 850.3
+  },
+  {
+   "categories": "Category 123",
+   "values": 0.44
+  },
+  {
+   "categories": "Category 124",
+   "values": 810.1
+  },
+  {
+   "categories": "Category 125",
+   "values": 35.39
+  },
+  {
+   "categories": "Category 126",
+   "values": 938.45
+  },
+  {
+   "categories": "Category 127",
+   "values": 319.54
+  },
+  {
+   "categories": "Category 128",
+   "values": 461.55
+  },
+  {
+   "categories": "Category 129",
+   "values": 70.9
+  },
+  {
+   "categories": "Category 130",
+   "values": 49.63
+  },
+  {
+   "categories": "Category 131",
+   "values": 43.65
+  },
+  {
+   "categories": "Category 132",
+   "values": 318.56
+  },
+  {
+   "categories": "Category 133",
+   "values": 2.74
+  },
+  {
+   "categories": "Category 134",
+   "values": 592.01
+  },
+  {
+   "categories": "Category 135",
+   "values": 490.98
+  },
+  {
+   "categories": "Category 136",
+   "values": 509.91
+  },
+  {
+   "categories": "Category 137",
+   "values": 248.19
+  },
+  {
+   "categories": "Category 138",
+   "values": 1.07
+  },
+  {
+   "categories": "Category 139",
+   "values": 12.17
+  },
+  {
+   "categories": "Category 140",
+   "values": 844.62
+  },
+  {
+   "categories": "Category 141",
+   "values": 17.1
+  },
+  {
+   "categories": "Category 142",
+   "values": 473.15
+  },
+  {
+   "categories": "Category 143",
+   "values": 797.49
+  },
+  {
+   "categories": "Category 144",
+   "values": 1.37
+  },
+  {
+   "categories": "Category 145",
+   "values": 779.93
+  },
+  {
+   "categories": "Category 146",
+   "values": 741.95
+  },
+  {
+   "categories": "Category 147",
+   "values": 985.53
+  },
+  {
+   "categories": "Category 148",
+   "values": 910.67
+  },
+  {
+   "categories": "Category 149",
+   "values": 585.05
+  },
+  {
+   "categories": "Category 150",
+   "values": 176.07
+  }
+ ]
+}

@@ -26,6 +26,36 @@ bound to `data.rows`.
 
 `<viz-folder>/fixtures/<name>.json`. They're harvested into `examples/` along with the viz.
 
+### Building fixtures: `make-fixture.mjs`
+
+```bash
+# Real data: save a cognos_query result as JSON, then convert it (slots auto-map by type, or --map)
+node tools/harness/make-fixture.mjs workbench/<Name> --from result.json [--map categories="Product line",values=Revenue]
+
+# Edge cases derived from a base fixture (default: first real-* one)
+node tools/harness/make-fixture.mjs workbench/<Name> --stress [--base <fixture>] [--cat <slot>]
+```
+
+- **Real data** (`--from`): query at the grain a dashboard would send. Group by the columns bound
+  to cat slots and total the measures. This needs only the Cognos MCP connector, not a Connected
+  dev setup. The totals then match what Cognos draws: verified against the CV Dev Harness widget
+  on CA 12.1.
+- **Stress** (`--stress`): writes `stress-*.json` with these cases:
+  - `nulls`: null measures, plus one null category member
+  - `many-categories`: 150 members of `--cat`, which defaults to the first cat slot
+  - `long-labels`: names over 70 characters
+  - `negative-zero`
+  - `extreme-magnitudes`: 1e12 next to 0.001
+  - `single-row`
+  - `empty`
+
+  Pick `--cat` as the slot that drives the marks, for example `name` rather than `time` in a bar
+  chart race. Judge these by eye as well as by `__harness.errors`. A null drawn like a zero, or a
+  negative clipped off-canvas, throws no error.
+
+On a null category, the host still gives the data point a member, with an empty key and caption.
+Only measures arrive as `null` (`value(i) → null`). The mock follows that.
+
 ```json
 {
   "mapping":  { "categories": "Product line", "values": "Revenue" },

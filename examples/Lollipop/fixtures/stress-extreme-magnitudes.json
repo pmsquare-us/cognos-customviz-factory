@@ -1,0 +1,29 @@
+{
+ "note": "1e12-scale values next to 0.001-scale values",
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": [
+  {
+   "categories": "Personal Accessories",
+   "values": 1000000000000
+  },
+  {
+   "categories": "Outdoor Protection",
+   "values": 0.002
+  },
+  {
+   "categories": "Mountaineering Equipment",
+   "values": 3000000000000
+  },
+  {
+   "categories": "Golf Equipment",
+   "values": 0.004
+  },
+  {
+   "categories": "Camping Equipment",
+   "values": 5000000000000
+  }
+ ]
+}

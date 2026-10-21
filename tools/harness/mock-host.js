@@ -207,7 +207,7 @@
       const segment = decorated({ getUniqueName: () => name, getCaption: () => caption });
       if (sd.type === "cont") {
         const vals = rows.map((r) => Number(r[name])).filter((v) => !isNaN(v));
-        const domain = { min: Math.min(...vals), max: Math.max(...vals) };
+        const domain = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 0, max: 0 };
         domain.getMin = () => domain.min; domain.getMax = () => domain.max;
         domain.isEmpty = () => vals.length === 0; domain.isExplicit = () => false;
         const item = {
@@ -245,12 +245,14 @@
         if (!slot.mapped) continue;
         const item = slot.dataItems[0];
         const raw = r[slot.name];
-        if (raw === undefined || raw === null) continue;
         if (item.type === "cat") {
-          const t = item._byKey.get(String(raw));
+          // The host always gives a data point a member for every mapped cat slot; a null
+          // category arrives as a member with an empty key/caption, not as a missing value.
+          const t = item._byKey.get(raw === undefined || raw === null ? "" : String(raw));
           keyParts.push(t.getKey());
           vals.set(slot, { asCat: () => ({ index: t.index }), asCont: () => null, getCaption: () => t.getCaption() });
         } else {
+          if (raw === undefined || raw === null) continue; // null measure: value(i) → null, as in Cognos
           const n = Number(raw);
           vals.set(slot, { asCat: () => null, asCont: () => ({ valueType: "numeric", value: n }), getCaption: () => fmt(n) });
         }

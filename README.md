@@ -100,6 +100,12 @@ Claude checks its own renders instead of handing you something to test:
 - **Offline harness** (`tools/harness/`): renders the built bundle from fixture data in a plain
   page, with no Cognos needed. It exercises the real customvis-lib palette, selection, and data
   code, and checks several sizes and unmapped optional slots.
+  Fixtures come from real Cognos query results (`tools/harness/make-fixture.mjs --from`), plus
+  generated edge cases (`--stress`). This is the default, and it needs no Cognos login.
+
+The next two are **optional**. They switch on when you name a client environment that has a
+`.env.<client>` file. Without one, Claude stops at a packed `.zip` for you to upload.
+
 - **Browser in Cognos** (`.mcp.json` → Playwright MCP): a Chrome window Claude drives. It opens
   your Cognos, watches the viz render live from `customvis start`, reads the console, and uploads
   packages. The browser profile is saved in `.browser-profile/`, so you sign in once.

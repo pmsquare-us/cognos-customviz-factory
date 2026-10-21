@@ -44,16 +44,20 @@ tools/       Schematic helpers: validate-schematic-svg.mjs (lint), pack-schemati
    every `cols[i]` / `value(i)` / `tuple(i)` index in `Main.ts`. See `docs/vizdef-reference.md`.
 2. **Scaffold** — `customvis create <Name> -t BarChart` in `workbench/`, overwrite `vizdef.xml`.
 3. **Implement `renderer/Main.ts`** — D3 port → `docs/d3-porting-guide.md`; fresh → `docs/patterns.md`.
-4. **Build & preview** — you look at your own output. Offline first: `customvis build` +
-   `node tools/harness/serve.mjs <viz>` with `fixtures/*.json`, checked in the Playwright browser
-   (status/errors/screenshot). Then in Cognos: `customvis start` + the client's *CV Dev Harness*
-   dashboard (*Test visualization* widget), **Refresh**, read the console. See `tools/harness/README.md`,
-   `tools/cognos-dev/README.md`.
+4. **Build & preview** — you look at your own output.
+   - **Always offline:** `customvis build` + `node tools/harness/serve.mjs <viz>`. Fixtures come
+     from `tools/harness/make-fixture.mjs`: real rows via `cognos_query --from`, plus `--stress`
+     edge cases. Check them in the Playwright browser (status/errors/screenshot).
+   - **Connected mode only** (the user names a client and `.env.<client>` exists): `customvis start`
+     + that client's *CV Dev Harness* dashboard, **Refresh**, read the console.
+   - See `tools/harness/README.md` and `tools/cognos-dev/README.md`.
 5. **Polish** — properties, legend, `nls/`, responsiveness, perf via `_info.reason`.
-6. **Pack/Deploy & harvest** — `node tools/deploy-viz.mjs --env <client> <viz>` (apikey/native),
-   or upload through *Manage → Customization → Custom visuals* in the Playwright browser (SSO).
-   **Ask before the first upload to a client environment.** Copy the finished viz (with
-   `fixtures/`) into `examples/`.
+6. **Pack/Deploy & harvest**
+   - **Offline:** `customvis pack`, then hand over the zip and the manual upload step.
+   - **Connected:** `node tools/deploy-viz.mjs --env <client> <viz>` (apikey/native), or the
+     Manage UI in the Playwright browser (SSO). **Ask before the first upload to a client
+     environment.**
+   - Either way, copy the finished viz (with `fixtures/`) into `examples/`.
 
 ## The schematic playbook (annotated-SVG track — `/generate-cognos-schematic`)
 

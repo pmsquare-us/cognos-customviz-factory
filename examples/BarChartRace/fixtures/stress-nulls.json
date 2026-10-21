@@ -1,0 +1,351 @@
+{
+ "note": "every 3rd measure null; last row's first category null",
+ "mapping": {
+  "time": "Year",
+  "name": "Company",
+  "category": "Sector",
+  "value": "Market cap ($B)"
+ },
+ "rows": [
+  {
+   "time": "2018",
+   "name": "Apple",
+   "category": "Tech",
+   "value": 120
+  },
+  {
+   "time": "2018",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": null
+  },
+  {
+   "time": "2018",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": 80
+  },
+  {
+   "time": "2018",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": 150
+  },
+  {
+   "time": "2018",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": null
+  },
+  {
+   "time": "2018",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2018",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": 100
+  },
+  {
+   "time": "2018",
+   "name": "Visa",
+   "category": "Finance",
+   "value": null
+  },
+  {
+   "time": "2019",
+   "name": "Apple",
+   "category": "Tech",
+   "value": 142
+  },
+  {
+   "time": "2019",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": 132
+  },
+  {
+   "time": "2019",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": null
+  },
+  {
+   "time": "2019",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": 155
+  },
+  {
+   "time": "2019",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": 136
+  },
+  {
+   "time": "2019",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": null
+  },
+  {
+   "time": "2019",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": 106
+  },
+  {
+   "time": "2019",
+   "name": "Visa",
+   "category": "Finance",
+   "value": 68
+  },
+  {
+   "time": "2020",
+   "name": "Apple",
+   "category": "Tech",
+   "value": null
+  },
+  {
+   "time": "2020",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": 158
+  },
+  {
+   "time": "2020",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": 125
+  },
+  {
+   "time": "2020",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": null
+  },
+  {
+   "time": "2020",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": 132
+  },
+  {
+   "time": "2020",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2020",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": null
+  },
+  {
+   "time": "2020",
+   "name": "Visa",
+   "category": "Finance",
+   "value": 78
+  },
+  {
+   "time": "2021",
+   "name": "Apple",
+   "category": "Tech",
+   "value": 197
+  },
+  {
+   "time": "2021",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": null
+  },
+  {
+   "time": "2021",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": 156
+  },
+  {
+   "time": "2021",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": 164
+  },
+  {
+   "time": "2021",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": null
+  },
+  {
+   "time": "2021",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2021",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": 119
+  },
+  {
+   "time": "2021",
+   "name": "Visa",
+   "category": "Finance",
+   "value": null
+  },
+  {
+   "time": "2022",
+   "name": "Apple",
+   "category": "Tech",
+   "value": 233
+  },
+  {
+   "time": "2022",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": 228
+  },
+  {
+   "time": "2022",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": null
+  },
+  {
+   "time": "2022",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": 169
+  },
+  {
+   "time": "2022",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": 124
+  },
+  {
+   "time": "2022",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": null
+  },
+  {
+   "time": "2022",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": 126
+  },
+  {
+   "time": "2022",
+   "name": "Visa",
+   "category": "Finance",
+   "value": 101
+  },
+  {
+   "time": "2023",
+   "name": "Apple",
+   "category": "Tech",
+   "value": null
+  },
+  {
+   "time": "2023",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": 274
+  },
+  {
+   "time": "2023",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": 244
+  },
+  {
+   "time": "2023",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": null
+  },
+  {
+   "time": "2023",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": 120
+  },
+  {
+   "time": "2023",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2023",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": null
+  },
+  {
+   "time": "2023",
+   "name": "Visa",
+   "category": "Finance",
+   "value": 116
+  },
+  {
+   "time": "2024",
+   "name": "Apple",
+   "category": "Tech",
+   "value": 324
+  },
+  {
+   "time": "2024",
+   "name": "Microsoft",
+   "category": "Tech",
+   "value": null
+  },
+  {
+   "time": "2024",
+   "name": "Amazon",
+   "category": "Retail",
+   "value": 305
+  },
+  {
+   "time": "2024",
+   "name": "Walmart",
+   "category": "Retail",
+   "value": 179
+  },
+  {
+   "time": "2024",
+   "name": "Exxon",
+   "category": "Energy",
+   "value": null
+  },
+  {
+   "time": "2024",
+   "name": "Chevron",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2024",
+   "name": "JPMorgan",
+   "category": "Finance",
+   "value": 142
+  },
+  {
+   "time": "2024",
+   "name": null,
+   "category": "Finance",
+   "value": null
+  }
+ ],
+ "props": {
+  "topN": 6,
+  "stepDuration": 150
+ }
+}
