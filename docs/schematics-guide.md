@@ -124,7 +124,8 @@ SVGs) → **Download** the `.zip`.
 ## Deploy & preview
 
 1. *Manage → Customization → Custom visuals → Upload custom visual* → select the `.zip` (requires the
-   **Manage Visualizations** capability).
+   **Manage Visualizations** capability). Scripted alternative for a configured client environment:
+   `node tools/deploy-viz.mjs --env <client> <slug>.schematic.zip` (see `tools/cognos-dev/README.md`).
 2. In a report/dashboard, drag **Schematic preview**; bind a dataset whose category values match the
    `data-cv-key` set, plus a measure to color by.
 3. Toggle **Highlight regions** to confirm every intended element is mapped (unmapped/non-mappable

@@ -87,7 +87,9 @@ this.properties.setActive("name", b)  // enable/disable in the UI (call from upd
 const pal = _info.props.get("colors") as CatPalette;
 pal.getColor(tuple)        // raw Color
 pal.getFillColor(dp)       // dims deselected — USE THIS for fills
-pal.getOutlineColor(dp)    // highlight outline — USE THIS for strokes
+pal.getOutlineColor(dp)    // emphasis outline: null unless dp is highlighted/selected
+                           // → use for an extra highlight stroke only. A stroke that must
+                           //   always draw (stems, lines, borders) uses getFillColor(dp).
 
 // Continuous: ContPalette -> ColorStops -> getColor(value)
 const cpal = _info.props.get("color") as ContPalette;

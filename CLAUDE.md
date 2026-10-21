@@ -88,4 +88,5 @@ No CLI/RenderBase/vizdef. Full detail in `docs/schematics-guide.md`; stages:
 - Data model: `DataSet.cols[i]` (a `Slot`: `.mapped`/`.tuples`/`.domain`) and `.rows` (each a
   `DataPoint`: `.value(i)`/`.tuple(i)`/`.caption(i)`/`.selected`/`.highlighted`).
 - Color via palettes: `palette.getFillColor(dp)` / `getOutlineColor(dp)` (handle selection/highlight).
+  `getOutlineColor` is `null` unless highlighted/selected, so always-visible strokes use `getFillColor`.
 - Tooltips/selection/highlight are provided by the host once data is d3-bound (default `hitTest`).

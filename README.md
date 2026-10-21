@@ -24,7 +24,7 @@ It covers **two tracks**:
 |---|---|
 | `docs/` | Reference. `Cognos_CustomViz_Developer_Guide.md` is the source of truth; the other `*.md` files are condensed cheatsheets (API, vizdef, patterns, D3 porting, gotchas, schematics). |
 | `templates/` | Known-good baselines — `customvis create` ones (BarChart / Basic / BasicJS) and a `Schematic/` reference SVG. |
-| `examples/` | Finished, validated viz & schematics used as few-shot references (Lollipop, BarChartRace, OfficeFloorPlan). |
+| `examples/` | Finished, validated viz & schematics used as few-shot references (Lollipop, StackedBarCallout, BarChartRace, OfficeFloorPlan), with harness fixtures where available. |
 | `tools/` | Schematic helpers (`validate-schematic-svg.mjs`, `pack-schematic.mjs`); `harness/` offline render harness; `cognos-dev/` browser loop in Cognos; `deploy-viz.mjs` upload/update. |
 | `workbench/` | Disposable scratch area where new work is scaffolded and built. |
 | `.claude/skills/` | The `/generate-cognos-viz` and `/generate-cognos-schematic` orchestrator skills. |
@@ -43,14 +43,18 @@ It covers **two tracks**:
 
   (Templates pin **D3 v5** — write against v5 APIs.)
 - **Claude Code** (recommended) — to drive the `/generate-cognos-viz` skill.
-- A **Cognos Analytics** environment with the *Manage Visualizations* capability to preview/deploy.
+- **Google Chrome** — the Playwright browser Claude uses to check renders runs your installed Chrome.
+- A **Cognos Analytics** environment with the *Manage Visualizations* capability to upload and use
+  what you build. Building and offline checking don't need one. Connecting Claude to it for live
+  checks and deploys is optional (see below).
 
 ## Quickstart (Claude Code)
 
 ```bash
 git clone https://github.com/pmsquare-us/cognos-customviz-factory.git
 cd cognos-customviz-factory
-claude            # open the repo in Claude Code
+npm install --prefix tools/cognos-dev   # once: pinned Playwright MCP, so Claude can see renders
+claude                                  # open the repo; approve the "playwright" MCP server
 ```
 
 Then just ask:
@@ -61,17 +65,18 @@ Then just ask:
 
 …and describe the chart you want, or paste/point to the D3 source you're porting. The skill
 walks the staged playbook for you: spec → `vizdef.xml` data contract → scaffold → implement
-`renderer/Main.ts` → build & preview in Cognos → polish → pack → harvest into `examples/`.
+`renderer/Main.ts` → build & check renders (offline, optionally in Cognos) → polish → pack (or
+deploy) → harvest into `examples/`.
 
 ## The playbook (what the skill automates)
 
-0. **Intake/Spec** — input type, chart description, data shape (`cat`/`cont` slots), interactivity, properties, target CA version.
+0. **Intake/Spec** — input type, chart description, data shape (`cat`/`cont` slots), interactivity, properties, target CA version, and **mode**: Offline (default) or Connected to a named client environment.
 1. **Data contract → `vizdef.xml`** — the most important step; slot order defines every `cols[i]`/`value(i)` index. (`docs/vizdef-reference.md`)
 2. **Scaffold** — `customvis create <Name> -t BarChart` in `workbench/`, overwrite `vizdef.xml`.
 3. **Implement `renderer/Main.ts`** — D3 port (`docs/d3-porting-guide.md`) or fresh (`docs/patterns.md`).
-4. **Build & preview** — `customvis build` / `customvis start`, validate in Cognos, iterate with **Refresh**.
+4. **Build & preview** — `customvis build`, then Claude checks the render in the offline harness against real-data and edge-case fixtures (screenshots + errors). Connected mode adds a live check in Cognos (`customvis start` + a dev dashboard).
 5. **Polish** — properties, legend, `nls/` localization, responsiveness, perf via `_info.reason`.
-6. **Pack/Deploy & harvest** — `customvis pack` → upload via *Manage → Customization → Custom visuals*; copy the finished viz into `examples/`.
+6. **Pack/Deploy & harvest** — `customvis pack`. Offline: you upload the `.zip` via *Manage → Customization → Custom visuals*. Connected: `tools/deploy-viz.mjs` uploads or updates it (asking before the first upload to an environment). The finished viz is copied into `examples/`.
 
 ## Schematics
 
@@ -116,19 +121,20 @@ The next two are **optional**. They switch on when you name a client environment
 
 ```bash
 cp cognos.env.example .env.<client>   # set COGNOS_URL and COGNOS_AUTH (sso | apikey | native)
-npm install --prefix tools/cognos-dev # once per machine: pinned Playwright MCP (fast startup)
-claude                                # approve the "playwright" MCP server when prompted
 ```
 
-Claude opens the Cognos URL in the Playwright window and you sign in. Then it builds a
-*CV Dev Harness* dashboard for live previews. Needs Google Chrome installed. Details:
-`tools/cognos-dev/README.md`.
+For `apikey`, create a key in Cognos (*Profile and settings → My API keys*) and put it in the env
+file yourself. Then name the environment when you start a build ("…and deploy it to <client>").
+Claude opens the Cognos URL in the Playwright window, where you sign in, and builds a
+*CV Dev Harness* dashboard for live previews. The upload endpoints for CA 12.1 are already
+captured. Other versions need a one-time capture. Details: `tools/cognos-dev/README.md`.
 
 ## Building manually (without the skill)
 
 The repo is fully usable by hand: read `docs/`, copy a `templates/` or `examples/` folder into
-`workbench/`, then `customvis build` / `customvis start` / `customvis pack`. The skill just
-removes the manual orchestration and brings the right reference to each stage.
+`workbench/`, then `customvis build` / `customvis start` / `customvis pack`. To preview without
+Cognos, run `node tools/harness/serve.mjs workbench/<Name>` and open `http://127.0.0.1:8686/`. The
+skill just removes the manual orchestration and brings the right reference to each stage.
 
 > **Note — the IBM SDK library is not shipped in this repo.** Each viz `package.json` references
 > `@businessanalytics/customvis-lib` via a local `customvis-lib.tgz`, which is *Licensed Materials –
@@ -138,8 +144,8 @@ removes the manual orchestration and brings the right reference to each stage.
 
 ## Contributing back
 
-When you finish a viz, **harvest it**: copy the source-only folder into `examples/` and add a
-one-line row to `examples/README.md`. Every harvested example improves future generation for
+When you finish a viz, **harvest it**: copy the source-only folder (including `fixtures/`) into
+`examples/` and add a one-line row to `examples/README.md`. Every harvested example improves future generation for
 the whole team.
 
 ## License

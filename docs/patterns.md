@@ -46,7 +46,8 @@ d3.select( node ).select( "svg" ).selectAll( "rect" )
   .data( data.rows, ( d: DataPoint ) => d.key )   // key by d.key for stable joins
   .join( "rect" )
   .attr( "fill",   d => palette.getFillColor( d ) )      // selection dimming
-  .attr( "stroke", d => palette.getOutlineColor( d ) );  // highlight outline
+  .attr( "stroke", d => palette.getOutlineColor( d ) );  // highlight outline (null → no stroke until highlighted/selected)
+// Lines/stems/borders that must always show: .attr( "stroke", d => palette.getFillColor( d ) )
 ```
 
 ## Grouped/stacked: filter rows per category

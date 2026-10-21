@@ -2,8 +2,12 @@
 
 Claude drives a real Chrome (Playwright MCP, configured in the repo's `.mcp.json`) to sign in to a
 client's Cognos, watch a viz render live from `customvis start`, read its console, and upload
-finished packages. This file is the runbook for that loop. The offline loop (no Cognos) lives in
-`tools/harness/`. Use it first, because it's faster.
+finished packages. This file is the runbook for that loop.
+
+This is **Connected mode**, which is optional. The skills use it only when the user names a client
+environment that has a `.env.<client>` file. By default, builds stay offline in `tools/harness/`
+(faster, no login) and end with a packed `.zip` the user uploads. The same Playwright MCP also
+drives those offline checks, so the install in step 2 below applies to everyone.
 
 | File | Role |
 |---|---|
@@ -11,6 +15,8 @@ finished packages. This file is the runbook for that loop. The offline loop (no 
 | `playwright-mcp.json` | Browser config: installed Chrome, headed, persistent profile in `.browser-profile/`, private/local-network-access checks off. |
 | `../deploy-viz.mjs` | Headless upload/update for `apikey`/`native` auth. |
 | `../../cognos.env.example` | Per-client settings template, copied to `.env.<client>`. |
+| `package.json` | Pins `@playwright/mcp` for `npm install --prefix tools/cognos-dev`. |
+| `CV Dev Harness data.csv` | Generic sample data (3 categoricals × 2 measures) for the dev dashboard. |
 
 Why Playwright and not the desktop app's built-in browser: Cognos's *Test visualization* widget
 loads the bundle from `http://127.0.0.1:8585`, so the browser must run on the same machine as
@@ -20,6 +26,9 @@ otherwise needs before an https Cognos page may call a localhost server.
 ## First run per client
 
 1. `cp cognos.env.example .env.<client>` and set `COGNOS_URL` (up to `/bi`) and `COGNOS_AUTH`.
+   For `apikey`, create a key under *Profile and settings → My API keys* and paste it into
+   `COGNOS_API_KEY` yourself. Copy the endpoint values for your CA version from the table at
+   the end of this file, if it's listed.
 2. Once per machine: `npm install --prefix tools/cognos-dev`, which installs the pinned
    `@playwright/mcp`. Without it, the launcher falls back to `npx`, which can miss Claude Code's
    30 s MCP connect timeout. Then restart Claude Code in the repo (or `/mcp` → reconnect) and

@@ -11,7 +11,7 @@ by Cognos data instead of a hard-coded array.
 | `d3.select("body")` / `("svg")` | `d3.select( _node )` — the host-managed root |
 | `d3.csv(...)` / inline array | `_info.data.rows` (and `cols[i]` for scales) |
 | `width`/`height` constants | `_info.node.clientWidth/clientHeight` (resizes!) |
-| Hard-coded colors | `palette.getFillColor(dp)` / `getOutlineColor(dp)` |
+| Hard-coded colors | `palette.getFillColor(dp)` for fills *and* always-visible strokes; `getOutlineColor(dp)` only for an emphasis outline (it's `null` until highlighted/selected) |
 | Manual `.on("mouseover", tooltip)` | Delete it — host gives tooltips via `hitTest` |
 | `<script src="d3.v3">` | `import * as d3 from "d3"` (bundled — **D3 v5**, see gotchas) |
 
@@ -28,8 +28,10 @@ by Cognos data instead of a hard-coded array.
    Replace `d.fieldName` with `d.value(IDX)` / `d.tuple(IDX).key|caption`.
 5. **Rebuild scales** from `cols[i].domain.asArray()` (cont) and `cols[i].tuples` (cat), using
    `node.clientWidth/Height` for ranges so it reflows on resize.
-6. **Colors → palette.** Swap fixed fills for `palette.getFillColor(d)` / `getOutlineColor(d)`
-   so selection-dimming and highlight outlines work for free. Add a `color` channel + palette in vizdef.
+6. **Colors → palette.** Swap fixed fills, and strokes that must always show (lines, stems), for
+   `palette.getFillColor(d)`, so selection dimming works for free. Add `getOutlineColor(d)` only as
+   an extra emphasis stroke: it returns `null` until the point is highlighted or selected. Add a
+   `color` channel + palette in vizdef.
 7. **Delete custom interactivity.** Remove manual tooltip/click handlers. Bind `.data(data.rows)`
    so the default `hitTest` works; only override `hitTest` if you wrap DataPoint in another object.
 8. **Use `.join()`** for enter/update/exit (terser than `.enter().append()`); v5.8+ supports it.
