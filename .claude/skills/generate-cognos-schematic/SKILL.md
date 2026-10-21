@@ -42,6 +42,10 @@ Restate a short spec; ask (AskUserQuestion) only what materially changes the bui
 - **Views:** should regions group into toggleable `data-cv-view`s? With what `title`s?
 - **Package metadata:** display name, description, icon (defaults to the SVG itself).
 - **Target CA version** (11.1.x / 12.x) — schematics are version-tolerant, but note it.
+- **Cognos mode:**
+  - **Offline (default):** validate and pack, then hand the user the zip.
+  - **Connected:** only when the user names a client environment and `.env.<client>` exists.
+    It adds the automated upload and in-Cognos preview in Stage 5.
 
 ## Stage 1 — Produce the SVG
 
@@ -83,12 +87,28 @@ node tools/pack-schematic.mjs --name "<Display Name>" [--description "…"] [--i
 Produces `<slug>.schematic.zip` in the verified Cognos format. (UI fallback documented in the guide
 if the format is ever rejected.)
 
-## Stage 5 — Deploy & preview (guide the user)
+## Stage 5 — Deploy & preview
 
-Upload via *Manage → Customization → Custom visuals → Upload custom visual* (requires Manage
-Visualizations). Then drag **Schematic preview** in a report, bind a dataset whose category values
-match the keys + a measure, toggle **Highlight regions** to confirm all regions are mapped, and
-verify views / pan-zoom / selection.
+**Offline mode:** hand over `<slug>.schematic.zip` with the manual steps.
+
+1. *Manage → Customization → Custom visuals → Upload custom visual*. Requires Manage
+   Visualizations.
+2. Drag **Schematic preview** into a report.
+3. Bind a dataset whose category values match the keys, plus a measure.
+4. Toggle **Highlight regions** to confirm every region is mapped, then check views, pan-zoom,
+   and selection.
+
+**Connected mode:**
+
+1. Upload:
+   - With `COGNOS_AUTH=apikey|native` and captured endpoints, run
+     `node tools/deploy-viz.mjs --env <client> <slug>.schematic.zip`.
+   - Otherwise upload through *Manage → Customization* in the Playwright browser
+     (`tools/cognos-dev/README.md` "Upload via the browser").
+   - **Ask before the first upload to a client environment.**
+2. Do the same preview checks yourself in the Playwright browser, taking screenshots as evidence.
+
+If the Playwright tools aren't available, fall back to the offline hand-off.
 
 ## Stage 6 — Harvest
 

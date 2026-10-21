@@ -1,0 +1,13 @@
+{
+ "note": "one data point",
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": [
+  {
+   "categories": "Personal Accessories",
+   "values": 6259832
+  }
+ ]
+}

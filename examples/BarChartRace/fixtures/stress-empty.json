@@ -1,0 +1,14 @@
+{
+ "note": "no rows (empty-state guard)",
+ "mapping": {
+  "time": "Year",
+  "name": "Company",
+  "category": "Sector",
+  "value": "Market cap ($B)"
+ },
+ "rows": [],
+ "props": {
+  "topN": 6,
+  "stepDuration": 150
+ }
+}

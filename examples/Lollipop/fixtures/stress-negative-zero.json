@@ -1,0 +1,29 @@
+{
+ "note": "measures cycle 0 / negative / positive",
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": [
+  {
+   "categories": "Personal Accessories",
+   "values": 0
+  },
+  {
+   "categories": "Outdoor Protection",
+   "values": -5010917
+  },
+  {
+   "categories": "Mountaineering Equipment",
+   "values": 4092383
+  },
+  {
+   "categories": "Golf Equipment",
+   "values": 0
+  },
+  {
+   "categories": "Camping Equipment",
+   "values": -2247014
+  }
+ ]
+}

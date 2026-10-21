@@ -25,7 +25,7 @@ It covers **two tracks**:
 | `docs/` | Reference. `Cognos_CustomViz_Developer_Guide.md` is the source of truth; the other `*.md` files are condensed cheatsheets (API, vizdef, patterns, D3 porting, gotchas, schematics). |
 | `templates/` | Known-good baselines — `customvis create` ones (BarChart / Basic / BasicJS) and a `Schematic/` reference SVG. |
 | `examples/` | Finished, validated viz & schematics used as few-shot references (Lollipop, BarChartRace, OfficeFloorPlan). |
-| `tools/` | Schematic helpers: `validate-schematic-svg.mjs` (lint) and `pack-schematic.mjs` (build the upload `.zip`). |
+| `tools/` | Schematic helpers (`validate-schematic-svg.mjs`, `pack-schematic.mjs`); `harness/` offline render harness; `cognos-dev/` browser loop in Cognos; `deploy-viz.mjs` upload/update. |
 | `workbench/` | Disposable scratch area where new work is scaffolded and built. |
 | `.claude/skills/` | The `/generate-cognos-viz` and `/generate-cognos-schematic` orchestrator skills. |
 | `CLAUDE.md` | Instructions Claude reads automatically when working in this repo. |
@@ -92,6 +92,37 @@ node tools/pack-schematic.mjs --name "<Name>" <file.svg>  # build <slug>.schemat
 ```
 
 See `docs/schematics-guide.md` for the full contract, and `examples/OfficeFloorPlan/` for a worked example.
+
+## Claude sees what it builds
+
+Claude checks its own renders instead of handing you something to test:
+
+- **Offline harness** (`tools/harness/`): renders the built bundle from fixture data in a plain
+  page, with no Cognos needed. It exercises the real customvis-lib palette, selection, and data
+  code, and checks several sizes and unmapped optional slots.
+  Fixtures come from real Cognos query results (`tools/harness/make-fixture.mjs --from`), plus
+  generated edge cases (`--stress`). This is the default, and it needs no Cognos login.
+
+The next two are **optional**. They switch on when you name a client environment that has a
+`.env.<client>` file. Without one, Claude stops at a packed `.zip` for you to upload.
+
+- **Browser in Cognos** (`.mcp.json` → Playwright MCP): a Chrome window Claude drives. It opens
+  your Cognos, watches the viz render live from `customvis start`, reads the console, and uploads
+  packages. The browser profile is saved in `.browser-profile/`, so you sign in once.
+- **Deploy** (`tools/deploy-viz.mjs`): packs, then uploads or updates in place on a client
+  environment. Claude asks you before the first upload of a package to any environment.
+
+### First run per client
+
+```bash
+cp cognos.env.example .env.<client>   # set COGNOS_URL and COGNOS_AUTH (sso | apikey | native)
+npm install --prefix tools/cognos-dev # once per machine: pinned Playwright MCP (fast startup)
+claude                                # approve the "playwright" MCP server when prompted
+```
+
+Claude opens the Cognos URL in the Playwright window and you sign in. Then it builds a
+*CV Dev Harness* dashboard for live previews. Needs Google Chrome installed. Details:
+`tools/cognos-dev/README.md`.
 
 ## Building manually (without the skill)
 

@@ -1,0 +1,351 @@
+{
+ "note": "category names over 70 characters",
+ "mapping": {
+  "time": "Year",
+  "name": "Company",
+  "category": "Sector",
+  "value": "Market cap ($B)"
+ },
+ "rows": [
+  {
+   "time": "2018",
+   "name": "Apple — an unusually long category name that will not fit 1",
+   "category": "Tech",
+   "value": 120
+  },
+  {
+   "time": "2018",
+   "name": "Microsoft — an unusually long category name that will not fit 2",
+   "category": "Tech",
+   "value": 110
+  },
+  {
+   "time": "2018",
+   "name": "Amazon — an unusually long category name that will not fit 3",
+   "category": "Retail",
+   "value": 80
+  },
+  {
+   "time": "2018",
+   "name": "Walmart — an unusually long category name that will not fit 4",
+   "category": "Retail",
+   "value": 150
+  },
+  {
+   "time": "2018",
+   "name": "Exxon — an unusually long category name that will not fit 5",
+   "category": "Energy",
+   "value": 140
+  },
+  {
+   "time": "2018",
+   "name": "Chevron — an unusually long category name that will not fit 6",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2018",
+   "name": "JPMorgan — an unusually long category name that will not fit 7",
+   "category": "Finance",
+   "value": 100
+  },
+  {
+   "time": "2018",
+   "name": "Visa — an unusually long category name that will not fit 8",
+   "category": "Finance",
+   "value": 60
+  },
+  {
+   "time": "2019",
+   "name": "Apple — an unusually long category name that will not fit 9",
+   "category": "Tech",
+   "value": 142
+  },
+  {
+   "time": "2019",
+   "name": "Microsoft — an unusually long category name that will not fit 10",
+   "category": "Tech",
+   "value": 132
+  },
+  {
+   "time": "2019",
+   "name": "Amazon — an unusually long category name that will not fit 11",
+   "category": "Retail",
+   "value": 100
+  },
+  {
+   "time": "2019",
+   "name": "Walmart — an unusually long category name that will not fit 12",
+   "category": "Retail",
+   "value": 155
+  },
+  {
+   "time": "2019",
+   "name": "Exxon — an unusually long category name that will not fit 13",
+   "category": "Energy",
+   "value": 136
+  },
+  {
+   "time": "2019",
+   "name": "Chevron — an unusually long category name that will not fit 14",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2019",
+   "name": "JPMorgan — an unusually long category name that will not fit 15",
+   "category": "Finance",
+   "value": 106
+  },
+  {
+   "time": "2019",
+   "name": "Visa — an unusually long category name that will not fit 16",
+   "category": "Finance",
+   "value": 68
+  },
+  {
+   "time": "2020",
+   "name": "Apple — an unusually long category name that will not fit 17",
+   "category": "Tech",
+   "value": 167
+  },
+  {
+   "time": "2020",
+   "name": "Microsoft — an unusually long category name that will not fit 18",
+   "category": "Tech",
+   "value": 158
+  },
+  {
+   "time": "2020",
+   "name": "Amazon — an unusually long category name that will not fit 19",
+   "category": "Retail",
+   "value": 125
+  },
+  {
+   "time": "2020",
+   "name": "Walmart — an unusually long category name that will not fit 20",
+   "category": "Retail",
+   "value": 159
+  },
+  {
+   "time": "2020",
+   "name": "Exxon — an unusually long category name that will not fit 21",
+   "category": "Energy",
+   "value": 132
+  },
+  {
+   "time": "2020",
+   "name": "Chevron — an unusually long category name that will not fit 22",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2020",
+   "name": "JPMorgan — an unusually long category name that will not fit 23",
+   "category": "Finance",
+   "value": 112
+  },
+  {
+   "time": "2020",
+   "name": "Visa — an unusually long category name that will not fit 24",
+   "category": "Finance",
+   "value": 78
+  },
+  {
+   "time": "2021",
+   "name": "Apple — an unusually long category name that will not fit 25",
+   "category": "Tech",
+   "value": 197
+  },
+  {
+   "time": "2021",
+   "name": "Microsoft — an unusually long category name that will not fit 26",
+   "category": "Tech",
+   "value": 190
+  },
+  {
+   "time": "2021",
+   "name": "Amazon — an unusually long category name that will not fit 27",
+   "category": "Retail",
+   "value": 156
+  },
+  {
+   "time": "2021",
+   "name": "Walmart — an unusually long category name that will not fit 28",
+   "category": "Retail",
+   "value": 164
+  },
+  {
+   "time": "2021",
+   "name": "Exxon — an unusually long category name that will not fit 29",
+   "category": "Energy",
+   "value": 128
+  },
+  {
+   "time": "2021",
+   "name": "Chevron — an unusually long category name that will not fit 30",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2021",
+   "name": "JPMorgan — an unusually long category name that will not fit 31",
+   "category": "Finance",
+   "value": 119
+  },
+  {
+   "time": "2021",
+   "name": "Visa — an unusually long category name that will not fit 32",
+   "category": "Finance",
+   "value": 89
+  },
+  {
+   "time": "2022",
+   "name": "Apple — an unusually long category name that will not fit 33",
+   "category": "Tech",
+   "value": 233
+  },
+  {
+   "time": "2022",
+   "name": "Microsoft — an unusually long category name that will not fit 34",
+   "category": "Tech",
+   "value": 228
+  },
+  {
+   "time": "2022",
+   "name": "Amazon — an unusually long category name that will not fit 35",
+   "category": "Retail",
+   "value": 195
+  },
+  {
+   "time": "2022",
+   "name": "Walmart — an unusually long category name that will not fit 36",
+   "category": "Retail",
+   "value": 169
+  },
+  {
+   "time": "2022",
+   "name": "Exxon — an unusually long category name that will not fit 37",
+   "category": "Energy",
+   "value": 124
+  },
+  {
+   "time": "2022",
+   "name": "Chevron — an unusually long category name that will not fit 38",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2022",
+   "name": "JPMorgan — an unusually long category name that will not fit 39",
+   "category": "Finance",
+   "value": 126
+  },
+  {
+   "time": "2022",
+   "name": "Visa — an unusually long category name that will not fit 40",
+   "category": "Finance",
+   "value": 101
+  },
+  {
+   "time": "2023",
+   "name": "Apple — an unusually long category name that will not fit 41",
+   "category": "Tech",
+   "value": 275
+  },
+  {
+   "time": "2023",
+   "name": "Microsoft — an unusually long category name that will not fit 42",
+   "category": "Tech",
+   "value": 274
+  },
+  {
+   "time": "2023",
+   "name": "Amazon — an unusually long category name that will not fit 43",
+   "category": "Retail",
+   "value": 244
+  },
+  {
+   "time": "2023",
+   "name": "Walmart — an unusually long category name that will not fit 44",
+   "category": "Retail",
+   "value": 174
+  },
+  {
+   "time": "2023",
+   "name": "Exxon — an unusually long category name that will not fit 45",
+   "category": "Energy",
+   "value": 120
+  },
+  {
+   "time": "2023",
+   "name": "Chevron — an unusually long category name that will not fit 46",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2023",
+   "name": "JPMorgan — an unusually long category name that will not fit 47",
+   "category": "Finance",
+   "value": 134
+  },
+  {
+   "time": "2023",
+   "name": "Visa — an unusually long category name that will not fit 48",
+   "category": "Finance",
+   "value": 116
+  },
+  {
+   "time": "2024",
+   "name": "Apple — an unusually long category name that will not fit 49",
+   "category": "Tech",
+   "value": 324
+  },
+  {
+   "time": "2024",
+   "name": "Microsoft — an unusually long category name that will not fit 50",
+   "category": "Tech",
+   "value": 328
+  },
+  {
+   "time": "2024",
+   "name": "Amazon — an unusually long category name that will not fit 51",
+   "category": "Retail",
+   "value": 305
+  },
+  {
+   "time": "2024",
+   "name": "Walmart — an unusually long category name that will not fit 52",
+   "category": "Retail",
+   "value": 179
+  },
+  {
+   "time": "2024",
+   "name": "Exxon — an unusually long category name that will not fit 53",
+   "category": "Energy",
+   "value": 117
+  },
+  {
+   "time": "2024",
+   "name": "Chevron — an unusually long category name that will not fit 54",
+   "category": "Energy",
+   "value": 90
+  },
+  {
+   "time": "2024",
+   "name": "JPMorgan — an unusually long category name that will not fit 55",
+   "category": "Finance",
+   "value": 142
+  },
+  {
+   "time": "2024",
+   "name": "Visa — an unusually long category name that will not fit 56",
+   "category": "Finance",
+   "value": 132
+  }
+ ],
+ "props": {
+  "topN": 6,
+  "stepDuration": 150
+ }
+}

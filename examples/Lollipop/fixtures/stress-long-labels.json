@@ -1,0 +1,29 @@
+{
+ "note": "category names over 70 characters",
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": [
+  {
+   "categories": "Personal Accessories — an unusually long category name that will not fit 1",
+   "values": 6259832
+  },
+  {
+   "categories": "Outdoor Protection — an unusually long category name that will not fit 2",
+   "values": 5010917
+  },
+  {
+   "categories": "Mountaineering Equipment — an unusually long category name that will not fit 3",
+   "values": 4092383
+  },
+  {
+   "categories": "Golf Equipment — an unusually long category name that will not fit 4",
+   "values": 3102239
+  },
+  {
+   "categories": "Camping Equipment — an unusually long category name that will not fit 5",
+   "values": 2247014
+  }
+ ]
+}

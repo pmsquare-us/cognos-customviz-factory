@@ -33,7 +33,18 @@
 - **Browser:** Chrome recommended; Firefox/Edge work; **Safari is NOT supported** for local dev.
   Do **not** use Firefox to download `customvis.tgz` (it mangles the file).
 - **Chrome insecure-private-network:** Chrome may block the HTTPS Cognos page → HTTP localhost
-  server. Set flag `Block insecure private network requests` = **Disabled** while testing, then re-enable.
+  server. The repo's Playwright browser (`.mcp.json` → `tools/cognos-dev/playwright-mcp.json`)
+  launches with those checks disabled, so nothing to do there. In your everyday Chrome, set flag
+  `Block insecure private network requests` (newer Chrome: `Local Network Access Checks`) =
+  **Disabled** while testing, then re-enable.
+- **`getOutlineColor()` is `null` unless the point is highlighted or selected** (with a selection
+  active). Use it for an emphasis stroke only. For a mark that must always draw (stems, lines,
+  borders), use `getFillColor()`. Otherwise the mark is invisible.
+- **The offline harness runs the real lib.** `RenderBase` is bundled into `build/renderer/Main.js`
+  (only d3 is external), so `tools/harness` exercises the same palette/selection/data code as
+  Cognos. Host chrome (legend, properties panel, tooltips UI) is the part it can't show.
+- **Cognos UI selectors drift between CA versions.** The in-Cognos steps live as text in
+  `tools/cognos-dev/README.md`. Fix them there when a click stops matching.
 - **Default port** 8585; override with `customvis start -p <port>`.
 - `customvis start` serves the build dir at `127.0.0.1`; Cognos sandbox widgets connect to it.
   Use **Test visualization** (dashboard, Custom tab) or **Custom visual preview** (report, Advanced),
@@ -70,3 +81,11 @@ Quick rules below; full workflow + packaging in `docs/schematics-guide.md` (skil
   Be judicious — uploaders can deliver malicious code. (Assign sparingly.)
 - Deploy: `customvis pack` → `<Name>.packed.zip` → *Manage → Customization → Custom visuals →
   Upload custom visual*. Update/Download/Properties(permissions)/Delete from the same screen.
+  Scripted: `node tools/deploy-viz.mjs --env <client> <viz>` (apikey/native auth).
+- **No public REST endpoint for custom visuals.** CA 12.1's `/api/v1` OpenAPI covers `extensions`
+  and `themes` only. The Manage page uses an internal endpoint, captured once per CA version
+  (`tools/cognos-dev/README.md` "Endpoint discovery"). REST login is
+  `PUT /api/v1/session` → `session_key`, sent as `IBM-BA-Authorization: CAM <key>`. CA 12.1: upload
+  `POST /v1/visualizations?updateAction=FAIL`, update `PUT /v1/visualizations/id/<id>` (raw zip);
+  `/v1` writes need a double-submit XSRF token (`XSRF-TOKEN` cookie = `X-XSRF-TOKEN` header), which
+  an API-key session must mint itself, or it gets 403.

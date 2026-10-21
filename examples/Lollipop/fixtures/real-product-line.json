@@ -1,0 +1,33 @@
+{
+ "source": {
+  "from": "cognos_query on CV Dev Harness data.csv (Product line, total Revenue), pm2 sandbox 2026-10-21",
+  "rowCount": 5,
+  "truncated": false
+ },
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": [
+  {
+   "categories": "Personal Accessories",
+   "values": 6259832
+  },
+  {
+   "categories": "Outdoor Protection",
+   "values": 5010917
+  },
+  {
+   "categories": "Mountaineering Equipment",
+   "values": 4092383
+  },
+  {
+   "categories": "Golf Equipment",
+   "values": 3102239
+  },
+  {
+   "categories": "Camping Equipment",
+   "values": 2247014
+  }
+ ]
+}

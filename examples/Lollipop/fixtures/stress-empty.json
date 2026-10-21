@@ -1,0 +1,8 @@
+{
+ "note": "no rows (empty-state guard)",
+ "mapping": {
+  "categories": "Product line",
+  "values": "Revenue"
+ },
+ "rows": []
+}

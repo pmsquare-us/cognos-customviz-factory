@@ -1,0 +1,8 @@
+{
+  "name": "cognos-dev-tools",
+  "private": true,
+  "description": "Pinned Playwright MCP for the repo's browser loop. Install once: npm install --prefix tools/cognos-dev",
+  "dependencies": {
+    "@playwright/mcp": "0.0.83"
+  }
+}

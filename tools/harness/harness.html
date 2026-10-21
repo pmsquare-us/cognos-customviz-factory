@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CustomViz Harness</title>
+<style>
+  :root { --bg: #f4f5f7; --panel: #fff; --ink: #1d2433; --muted: #5c6577; --line: #d9dde5; --ok: #1f7a3a; --err: #b42318; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 13px/1.4 system-ui, sans-serif; }
+  header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 8px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  header b { font-weight: 600; }
+  #rows { color: var(--muted); }
+  #status { margin-left: auto; font-weight: 600; }
+  #status[data-status="ready"] { color: var(--ok); }
+  #status[data-status="error"] { color: var(--err); }
+  #props { display: flex; flex-wrap: wrap; gap: 12px; padding: 8px 16px; border-bottom: 1px solid var(--line); background: var(--panel); }
+  #props:empty { display: none; }
+  main { padding: 16px; }
+  /* The host gives the viz an absolutely positioned child of a relative surface. */
+  #surface { position: relative; background: #fff; border: 1px solid var(--line); resize: both; overflow: hidden; }
+  #tooltip { position: fixed; z-index: 10; pointer-events: none; background: #1d2433; color: #fff; padding: 6px 8px; border-radius: 4px; font-size: 12px; }
+  body.embed header, body.embed #props { display: none; }
+  body.embed main { padding: 0; }
+  body.embed #surface { border: 0; resize: none; }
+  .grid { display: flex; flex-wrap: wrap; gap: 16px; padding: 16px; align-items: flex-start; }
+  .grid figure { margin: 0; }
+  .grid figcaption { color: var(--muted); margin-bottom: 4px; }
+  .grid iframe { border: 1px solid var(--line); background: #fff; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script>requirejs.config({ baseUrl: "/viz/", waitSeconds: 30 });</script>
+</head>
+<body>
+<header>
+  <b id="vizname">Custom viz</b>
+  <label>Fixture <select id="fixture"></select></label>
+  <span id="rows"></span>
+  <span id="status" data-status="loading">loading…</span>
+</header>
+<div id="props"></div>
+<main><div id="surface"></div></main>
+<div id="tooltip" hidden></div>
+<script>
+  (function () {
+    const qs = new URLSearchParams(location.search);
+    fetch("/viz/meta.json", { cache: "no-store" }).then((r) => r.json()).then((m) => {
+      document.getElementById("vizname").textContent = m.name + " · " + m.id;
+      document.title = m.name + " · Harness";
+    }).catch(() => {});
+    if (qs.get("embed") === "1") document.body.classList.add("embed");
+    // ?grid=1 → the same viz at three sizes side by side, for responsiveness checks.
+    if (qs.get("grid") === "1") {
+      const sizes = [[320, 220], [640, 400], [1024, 600]];
+      document.querySelector("main").outerHTML = '<div class="grid">' + sizes.map(([w, h]) => {
+        const q = new URLSearchParams(qs); q.delete("grid"); q.set("embed", "1"); q.set("w", w); q.set("h", h);
+        return `<figure><figcaption>${w}×${h}</figcaption><iframe src="?${q}" width="${w}" height="${h}"></iframe></figure>`;
+      }).join("") + "</div>";
+      document.getElementById("status").textContent = "grid";
+      document.getElementById("fixture").parentElement.hidden = true;
+      return;
+    }
+    const s = document.createElement("script");
+    s.src = "/harness/mock-host.js";
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>

@@ -20,7 +20,7 @@
         "name": "Lollipop",
         "id": "com.pmsquare.vis.lollipop",
         "type": "renderer",
-        "version": "1.0",
+        "version": "1.1",
         "description": "Bundle description",
         "icon": "icon.svg"
     }

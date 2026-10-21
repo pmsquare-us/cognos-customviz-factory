@@ -1,0 +1,293 @@
+{
+ "mapping": {
+  "time": "Year",
+  "name": "Company",
+  "value": "Market cap ($B)"
+ },
+ "rows": [
+  {
+   "time": "2018",
+   "name": "Apple",
+   "value": 120
+  },
+  {
+   "time": "2018",
+   "name": "Microsoft",
+   "value": 110
+  },
+  {
+   "time": "2018",
+   "name": "Amazon",
+   "value": 80
+  },
+  {
+   "time": "2018",
+   "name": "Walmart",
+   "value": 150
+  },
+  {
+   "time": "2018",
+   "name": "Exxon",
+   "value": 140
+  },
+  {
+   "time": "2018",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2018",
+   "name": "JPMorgan",
+   "value": 100
+  },
+  {
+   "time": "2018",
+   "name": "Visa",
+   "value": 60
+  },
+  {
+   "time": "2019",
+   "name": "Apple",
+   "value": 142
+  },
+  {
+   "time": "2019",
+   "name": "Microsoft",
+   "value": 132
+  },
+  {
+   "time": "2019",
+   "name": "Amazon",
+   "value": 100
+  },
+  {
+   "time": "2019",
+   "name": "Walmart",
+   "value": 155
+  },
+  {
+   "time": "2019",
+   "name": "Exxon",
+   "value": 136
+  },
+  {
+   "time": "2019",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2019",
+   "name": "JPMorgan",
+   "value": 106
+  },
+  {
+   "time": "2019",
+   "name": "Visa",
+   "value": 68
+  },
+  {
+   "time": "2020",
+   "name": "Apple",
+   "value": 167
+  },
+  {
+   "time": "2020",
+   "name": "Microsoft",
+   "value": 158
+  },
+  {
+   "time": "2020",
+   "name": "Amazon",
+   "value": 125
+  },
+  {
+   "time": "2020",
+   "name": "Walmart",
+   "value": 159
+  },
+  {
+   "time": "2020",
+   "name": "Exxon",
+   "value": 132
+  },
+  {
+   "time": "2020",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2020",
+   "name": "JPMorgan",
+   "value": 112
+  },
+  {
+   "time": "2020",
+   "name": "Visa",
+   "value": 78
+  },
+  {
+   "time": "2021",
+   "name": "Apple",
+   "value": 197
+  },
+  {
+   "time": "2021",
+   "name": "Microsoft",
+   "value": 190
+  },
+  {
+   "time": "2021",
+   "name": "Amazon",
+   "value": 156
+  },
+  {
+   "time": "2021",
+   "name": "Walmart",
+   "value": 164
+  },
+  {
+   "time": "2021",
+   "name": "Exxon",
+   "value": 128
+  },
+  {
+   "time": "2021",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2021",
+   "name": "JPMorgan",
+   "value": 119
+  },
+  {
+   "time": "2021",
+   "name": "Visa",
+   "value": 89
+  },
+  {
+   "time": "2022",
+   "name": "Apple",
+   "value": 233
+  },
+  {
+   "time": "2022",
+   "name": "Microsoft",
+   "value": 228
+  },
+  {
+   "time": "2022",
+   "name": "Amazon",
+   "value": 195
+  },
+  {
+   "time": "2022",
+   "name": "Walmart",
+   "value": 169
+  },
+  {
+   "time": "2022",
+   "name": "Exxon",
+   "value": 124
+  },
+  {
+   "time": "2022",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2022",
+   "name": "JPMorgan",
+   "value": 126
+  },
+  {
+   "time": "2022",
+   "name": "Visa",
+   "value": 101
+  },
+  {
+   "time": "2023",
+   "name": "Apple",
+   "value": 275
+  },
+  {
+   "time": "2023",
+   "name": "Microsoft",
+   "value": 274
+  },
+  {
+   "time": "2023",
+   "name": "Amazon",
+   "value": 244
+  },
+  {
+   "time": "2023",
+   "name": "Walmart",
+   "value": 174
+  },
+  {
+   "time": "2023",
+   "name": "Exxon",
+   "value": 120
+  },
+  {
+   "time": "2023",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2023",
+   "name": "JPMorgan",
+   "value": 134
+  },
+  {
+   "time": "2023",
+   "name": "Visa",
+   "value": 116
+  },
+  {
+   "time": "2024",
+   "name": "Apple",
+   "value": 324
+  },
+  {
+   "time": "2024",
+   "name": "Microsoft",
+   "value": 328
+  },
+  {
+   "time": "2024",
+   "name": "Amazon",
+   "value": 305
+  },
+  {
+   "time": "2024",
+   "name": "Walmart",
+   "value": 179
+  },
+  {
+   "time": "2024",
+   "name": "Exxon",
+   "value": 117
+  },
+  {
+   "time": "2024",
+   "name": "Chevron",
+   "value": 90
+  },
+  {
+   "time": "2024",
+   "name": "JPMorgan",
+   "value": 142
+  },
+  {
+   "time": "2024",
+   "name": "Visa",
+   "value": 132
+  }
+ ],
+ "props": {
+  "topN": 6,
+  "stepDuration": 150
+ }
+}
