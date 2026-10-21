@@ -110,6 +110,7 @@ Claude checks its own renders instead of handing you something to test:
 
 ```bash
 cp cognos.env.example .env.<client>   # set COGNOS_URL and COGNOS_AUTH (sso | apikey | native)
+npm install --prefix tools/cognos-dev # once per machine: pinned Playwright MCP (fast startup)
 claude                                # approve the "playwright" MCP server when prompted
 ```
 

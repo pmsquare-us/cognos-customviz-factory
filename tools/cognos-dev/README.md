@@ -20,7 +20,10 @@ otherwise needs before an https Cognos page may call a localhost server.
 ## First run per client
 
 1. `cp cognos.env.example .env.<client>` and set `COGNOS_URL` (up to `/bi`) and `COGNOS_AUTH`.
-2. Restart Claude Code in the repo and approve the `playwright` MCP server when prompted.
+2. Once per machine: `npm install --prefix tools/cognos-dev`, which installs the pinned
+   `@playwright/mcp`. Without it, the launcher falls back to `npx`, which can miss Claude Code's
+   30 s MCP connect timeout. Then restart Claude Code in the repo (or `/mcp` → reconnect) and
+   approve the `playwright` MCP server.
 3. Claude opens `COGNOS_URL` in the Playwright window. **You sign in** (SSO or namespace login).
    Claude never types credentials. The session persists in `.browser-profile/`, so later sessions
    start signed in until the Cognos session expires.
