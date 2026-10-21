@@ -6,12 +6,22 @@
       "channel": "chrome",
       "headless": false,
       "args": [
-        "--disable-features=BlockInsecurePrivateNetworkRequests,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults,LocalNetworkAccessChecks"
+        "--disable-features=BlockInsecurePrivateNetworkRequests,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults,LocalNetworkAccessChecks",
+        "--disable-blink-features="
       ]
     },
-    "contextOptions": { "viewport": { "width": 1440, "height": 900 } }
+    "contextOptions": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    }
   },
   "outputDir": "artifacts/playwright",
-  "console": { "level": "info" },
-  "timeouts": { "navigation": 90000 }
+  "console": {
+    "level": "info"
+  },
+  "timeouts": {
+    "navigation": 90000
+  }
 }

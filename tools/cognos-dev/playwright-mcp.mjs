@@ -7,6 +7,9 @@
 //     page can load a bundle from `customvis start` on http://127.0.0.1:8585 without flipping
 //     chrome://flags by hand;
 //   - it works on Windows, where .mcp.json can't spawn `npx` directly.
+// The config also passes an empty `--disable-blink-features=`: Playwright otherwise adds
+// `--disable-blink-features=AutomationControlled`, which makes Chrome show an "unsupported
+// command-line flag" warning bar (it skips its own when any --disable-blink-features is present).
 // Extra args pass through, e.g. `--headless` or `--caps devtools`.
 //
 // Prefers the local install (`npm install --prefix tools/cognos-dev`, version pinned in

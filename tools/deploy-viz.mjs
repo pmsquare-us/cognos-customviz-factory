@@ -29,6 +29,7 @@ import { join, resolve, dirname, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import { inflateRawSync } from "node:zlib";
+import { randomBytes } from "node:crypto";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -171,6 +172,9 @@ const login = await fetch(`${base}/api/v1/session`, {
 keepCookies(login);
 if (!login.ok) fail(`login failed: HTTP ${login.status} ${await login.text()}`);
 sessionKey = (await login.json()).session_key || null;
+// Cognos checks XSRF by double submit (X-XSRF-TOKEN header must equal the XSRF-TOKEN cookie), but
+// an API-key session isn't issued that cookie — so mint one, as the browser UI does.
+if (!cookies.has("XSRF-TOKEN")) cookies.set("XSRF-TOKEN", randomBytes(16).toString("hex"));
 console.log("deploy-viz: logged in");
 
 // ---- upload or update ----

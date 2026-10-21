@@ -85,4 +85,7 @@ Quick rules below; full workflow + packaging in `docs/schematics-guide.md` (skil
 - **No public REST endpoint for custom visuals.** CA 12.1's `/api/v1` OpenAPI covers `extensions`
   and `themes` only. The Manage page uses an internal endpoint, captured once per CA version
   (`tools/cognos-dev/README.md` "Endpoint discovery"). REST login is
-  `PUT /api/v1/session` → `session_key`, sent as `IBM-BA-Authorization: CAM <key>`.
+  `PUT /api/v1/session` → `session_key`, sent as `IBM-BA-Authorization: CAM <key>`. CA 12.1: upload
+  `POST /v1/visualizations?updateAction=FAIL`, update `PUT /v1/visualizations/id/<id>` (raw zip);
+  `/v1` writes need a double-submit XSRF token (`XSRF-TOKEN` cookie = `X-XSRF-TOKEN` header), which
+  an API-key session must mint itself, or it gets 403.

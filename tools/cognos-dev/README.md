@@ -99,8 +99,17 @@ calls an internal endpoint instead, so capture it:
 
 | CA version | COGNOS_VIZ_UPLOAD | COGNOS_VIZ_UPDATE | COGNOS_VIZ_LIST | format |
 |---|---|---|---|---|
-| 12.1 (pm2 sandbox, 2026-10) | _not captured yet_ | _not captured yet_ | `GET /v1/visualizations/custom?ps=65536` | |
+| 12.1 (pm2 sandbox, 2026-10) | `POST /v1/visualizations?maskResponses=true&updateAction=FAIL` | `PUT /v1/visualizations/id/{id}` | `GET /v1/visualizations/custom?ps=65536` | zip |
 
-CA 12.1 notes: the list returns `[{ id, name, type, storeId, modificationTime, … }]`, and
-`GET /v1/visualizations/<id>/content/meta.json` reads one visual's meta. If the update path takes
-the content store id, write it as `{storeId}`. `deploy-viz.mjs` fills that in from the list.
+CA 12.1 notes:
+- Both writes take the raw package as `Content-Type: application/zip`, for custom visuals and
+  schematics alike.
+- The list returns `[{ id, name, type, storeId, modificationTime, … }]`.
+  `GET /v1/visualizations/<id>/content/meta.json` reads one visual's meta.
+- An update keeps the visual's `storeId`, so permissions and dashboard references survive.
+- Verified headless with an API key: Lollipop 1.0 was updated to 1.1 in place.
+- **XSRF:** `/v1` writes need an `X-XSRF-TOKEN` header equal to an `XSRF-TOKEN` cookie (double
+  submit). An API-key session isn't issued that cookie, and without it writes return 403, so
+  `deploy-viz.mjs` mints one.
+- If another version's update path takes the content store id, write it as `{storeId}`.
+  `deploy-viz.mjs` fills it in from the list.
