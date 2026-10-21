@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<visualizationDefinition version="3.1" xmlns="http://www.ibm.com/xmlns/prod/ba/vipr/vizBundle/vizdef.3">
+    <slots>
+        <!-- Slot order == data.cols[] index. Mirrored as CAT=0, SERIES=1, VAL=2 in Main.ts. -->
+        <slot name="categories" caption="Categories" type="cat"  optional="false" />
+        <slot name="series"     caption="Series"     type="cat"  optional="true"  channel="color" />
+        <slot name="values"     caption="Values"     type="cont" optional="false" />
+    </slots>
+
+    <dataSets>
+        <dataSet name="data">
+            <ref slot="categories" />
+            <ref slot="series" />
+            <ref slot="values" />
+        </dataSet>
+    </dataSets>
+
+    <properties>
+        <group name="general">
+            <palette name="colors"         caption="Colors" slot="series" type="cat" />
+        </group>
+        <group name="labels" caption="Labels">
+            <boolean name="showLabels"     caption="Show labels"                           defaultValue="true" />
+            <number  name="labelMinHeight" caption="Min slab height for inside label (px)" defaultValue="16"  minValue="4" />
+            <number  name="fontSize"       caption="Font size (px)"                        defaultValue="11"  minValue="7" maxValue="24" />
+            <color   name="insideColor"    caption="Inside label text"                     defaultValue="#222222" />
+            <color   name="calloutColor"   caption="Callout label text"                    defaultValue="#222222" />
+            <color   name="badgeFill"      caption="Label background"                      defaultValue="white" />
+            <color   name="badgeBorder"    caption="Label border"                          defaultValue="#555555" />
+        </group>
+    </properties>
+
+    <capabilities>
+        <decorations>
+            <decoration name="selected"     type="boolean" target="datapoint" />
+            <decoration name="hasSelection" type="boolean" target="dataset" />
+            <decoration name="highlighted"  type="boolean" target="datapoint" />
+        </decorations>
+    </capabilities>
+</visualizationDefinition>
